@@ -1,0 +1,151 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\FAKULTET\\VI. SEMESTAR\\IUIS\\VEZBE\\PROJEKAT2\\PSI IUIS - PZ2 - po\u010Detni projekat\\Projekat\\NetworkService\\NetworkService\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|c:\\users\\korisnik\\onedrive\\desktop\\fakultet\\vi. semestar\\iuis\\vezbe\\projekat2\\psi iuis - pz2 - po\u010Detni projekat\\projekat\\networkservice\\networkservice\\networkservice\\viewmodel\\networkentitiesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|solutionrelative:networkservice\\viewmodel\\networkentitiesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|c:\\users\\korisnik\\onedrive\\desktop\\fakultet\\vi. semestar\\iuis\\vezbe\\projekat2\\psi iuis - pz2 - po\u010Detni projekat\\projekat\\networkservice\\networkservice\\networkservice\\views\\networkentitiesview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|solutionrelative:networkservice\\views\\networkentitiesview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|c:\\users\\korisnik\\onedrive\\desktop\\fakultet\\vi. semestar\\iuis\\vezbe\\projekat2\\psi iuis - pz2 - po\u010Detni projekat\\projekat\\networkservice\\networkservice\\networkservice\\views\\homeview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|solutionrelative:networkservice\\views\\homeview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|c:\\users\\korisnik\\onedrive\\desktop\\fakultet\\vi. semestar\\iuis\\vezbe\\projekat2\\psi iuis - pz2 - po\u010Detni projekat\\projekat\\networkservice\\networkservice\\networkservice\\views\\measurementgraphview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|solutionrelative:networkservice\\views\\measurementgraphview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|c:\\users\\korisnik\\onedrive\\desktop\\fakultet\\vi. semestar\\iuis\\vezbe\\projekat2\\psi iuis - pz2 - po\u010Detni projekat\\projekat\\networkservice\\networkservice\\networkservice\\views\\networkdisplayview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|solutionrelative:networkservice\\views\\networkdisplayview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|c:\\users\\korisnik\\onedrive\\desktop\\fakultet\\vi. semestar\\iuis\\vezbe\\projekat2\\psi iuis - pz2 - po\u010Detni projekat\\projekat\\networkservice\\networkservice\\networkservice\\viewmodel\\homeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|solutionrelative:networkservice\\viewmodel\\homeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|c:\\users\\korisnik\\onedrive\\desktop\\fakultet\\vi. semestar\\iuis\\vezbe\\projekat2\\psi iuis - pz2 - po\u010Detni projekat\\projekat\\networkservice\\networkservice\\networkservice\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|solutionrelative:networkservice\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|c:\\users\\korisnik\\onedrive\\desktop\\fakultet\\vi. semestar\\iuis\\vezbe\\projekat2\\psi iuis - pz2 - po\u010Detni projekat\\projekat\\networkservice\\networkservice\\networkservice\\viewmodel\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|solutionrelative:networkservice\\viewmodel\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NetworkEntitiesView.xaml",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\FAKULTET\\VI. SEMESTAR\\IUIS\\VEZBE\\PROJEKAT2\\PSI IUIS - PZ2 - po\u010Detni projekat\\Projekat\\NetworkService\\NetworkService\\NetworkService\\Views\\NetworkEntitiesView.xaml",
+              "RelativeDocumentMoniker": "NetworkService\\Views\\NetworkEntitiesView.xaml",
+              "ToolTip": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\FAKULTET\\VI. SEMESTAR\\IUIS\\VEZBE\\PROJEKAT2\\PSI IUIS - PZ2 - po\u010Detni projekat\\Projekat\\NetworkService\\NetworkService\\NetworkService\\Views\\NetworkEntitiesView.xaml",
+              "RelativeToolTip": "NetworkService\\Views\\NetworkEntitiesView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-12T20:22:21.851Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NetworkEntitiesViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\FAKULTET\\VI. SEMESTAR\\IUIS\\VEZBE\\PROJEKAT2\\PSI IUIS - PZ2 - po\u010Detni projekat\\Projekat\\NetworkService\\NetworkService\\NetworkService\\ViewModel\\NetworkEntitiesViewModel.cs",
+              "RelativeDocumentMoniker": "NetworkService\\ViewModel\\NetworkEntitiesViewModel.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\FAKULTET\\VI. SEMESTAR\\IUIS\\VEZBE\\PROJEKAT2\\PSI IUIS - PZ2 - po\u010Detni projekat\\Projekat\\NetworkService\\NetworkService\\NetworkService\\ViewModel\\NetworkEntitiesViewModel.cs",
+              "RelativeToolTip": "NetworkService\\ViewModel\\NetworkEntitiesViewModel.cs",
+              "ViewState": "AgIAAA4BAAAAAAAAAAAcwCcBAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T20:23:12.615Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "NetworkDisplayView.xaml",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\FAKULTET\\VI. SEMESTAR\\IUIS\\VEZBE\\PROJEKAT2\\PSI IUIS - PZ2 - po\u010Detni projekat\\Projekat\\NetworkService\\NetworkService\\NetworkService\\Views\\NetworkDisplayView.xaml",
+              "RelativeDocumentMoniker": "NetworkService\\Views\\NetworkDisplayView.xaml",
+              "ToolTip": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\FAKULTET\\VI. SEMESTAR\\IUIS\\VEZBE\\PROJEKAT2\\PSI IUIS - PZ2 - po\u010Detni projekat\\Projekat\\NetworkService\\NetworkService\\NetworkService\\Views\\NetworkDisplayView.xaml",
+              "RelativeToolTip": "NetworkService\\Views\\NetworkDisplayView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-12T20:24:09.938Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MeasurementGraphView.xaml",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\FAKULTET\\VI. SEMESTAR\\IUIS\\VEZBE\\PROJEKAT2\\PSI IUIS - PZ2 - po\u010Detni projekat\\Projekat\\NetworkService\\NetworkService\\NetworkService\\Views\\MeasurementGraphView.xaml",
+              "RelativeDocumentMoniker": "NetworkService\\Views\\MeasurementGraphView.xaml",
+              "ToolTip": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\FAKULTET\\VI. SEMESTAR\\IUIS\\VEZBE\\PROJEKAT2\\PSI IUIS - PZ2 - po\u010Detni projekat\\Projekat\\NetworkService\\NetworkService\\NetworkService\\Views\\MeasurementGraphView.xaml",
+              "RelativeToolTip": "NetworkService\\Views\\MeasurementGraphView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-12T20:22:18.535Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HomeView.xaml",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\FAKULTET\\VI. SEMESTAR\\IUIS\\VEZBE\\PROJEKAT2\\PSI IUIS - PZ2 - po\u010Detni projekat\\Projekat\\NetworkService\\NetworkService\\NetworkService\\Views\\HomeView.xaml",
+              "RelativeDocumentMoniker": "NetworkService\\Views\\HomeView.xaml",
+              "ToolTip": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\FAKULTET\\VI. SEMESTAR\\IUIS\\VEZBE\\PROJEKAT2\\PSI IUIS - PZ2 - po\u010Detni projekat\\Projekat\\NetworkService\\NetworkService\\NetworkService\\Views\\HomeView.xaml",
+              "RelativeToolTip": "NetworkService\\Views\\HomeView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-12T19:59:42.504Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\FAKULTET\\VI. SEMESTAR\\IUIS\\VEZBE\\PROJEKAT2\\PSI IUIS - PZ2 - po\u010Detni projekat\\Projekat\\NetworkService\\NetworkService\\NetworkService\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "NetworkService\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\FAKULTET\\VI. SEMESTAR\\IUIS\\VEZBE\\PROJEKAT2\\PSI IUIS - PZ2 - po\u010Detni projekat\\Projekat\\NetworkService\\NetworkService\\NetworkService\\MainWindow.xaml",
+              "RelativeToolTip": "NetworkService\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-12T20:01:18.447Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HomeViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\FAKULTET\\VI. SEMESTAR\\IUIS\\VEZBE\\PROJEKAT2\\PSI IUIS - PZ2 - po\u010Detni projekat\\Projekat\\NetworkService\\NetworkService\\NetworkService\\ViewModel\\HomeViewModel.cs",
+              "RelativeDocumentMoniker": "NetworkService\\ViewModel\\HomeViewModel.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\FAKULTET\\VI. SEMESTAR\\IUIS\\VEZBE\\PROJEKAT2\\PSI IUIS - PZ2 - po\u010Detni projekat\\Projekat\\NetworkService\\NetworkService\\NetworkService\\ViewModel\\HomeViewModel.cs",
+              "RelativeToolTip": "NetworkService\\ViewModel\\HomeViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T19:45:29.243Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MainWindowViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\FAKULTET\\VI. SEMESTAR\\IUIS\\VEZBE\\PROJEKAT2\\PSI IUIS - PZ2 - po\u010Detni projekat\\Projekat\\NetworkService\\NetworkService\\NetworkService\\ViewModel\\MainWindowViewModel.cs",
+              "RelativeDocumentMoniker": "NetworkService\\ViewModel\\MainWindowViewModel.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\FAKULTET\\VI. SEMESTAR\\IUIS\\VEZBE\\PROJEKAT2\\PSI IUIS - PZ2 - po\u010Detni projekat\\Projekat\\NetworkService\\NetworkService\\NetworkService\\ViewModel\\MainWindowViewModel.cs",
+              "RelativeToolTip": "NetworkService\\ViewModel\\MainWindowViewModel.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAkwDgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T20:00:13.46Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

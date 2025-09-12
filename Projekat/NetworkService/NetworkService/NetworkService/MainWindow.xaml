@@ -1,0 +1,69 @@
+﻿<Window
+    x:Class="NetworkService.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:NetworkService"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:view="clr-namespace:NetworkService.Views"
+    xmlns:viewModel="clr-namespace:NetworkService.ViewModel"
+    Title="MainWindow"
+    Width="450"
+    Height="700"
+    mc:Ignorable="d">
+
+    <Window.DataContext>
+        <viewModel:MainWindowViewModel />
+    </Window.DataContext>
+
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
+            <view:HomeView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:NetworkEntitiesViewModel}">
+            <view:NetworkEntitiesView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:NetworkDisplayViewModel}">
+            <view:NetworkDisplayView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:MeasurementGraphViewModel}">
+            <view:MeasurementGraphView />
+        </DataTemplate>
+    </Window.Resources>
+
+    <Grid>
+        <ContentControl
+            Grid.Row="0"
+            Grid.ColumnSpan="20"
+            Content="{Binding CurrentViewModel}" />
+
+
+        <Button
+            Grid.Row="1"
+            Grid.Column="0"
+            Width="100"
+            Height="35"
+            Margin="0,0,0,15"
+            Command="{Binding HomeCommand}"
+            Content="🏠 Home" />
+        <Button
+            Grid.Row="1"
+            Grid.Column="2"
+            Width="100"
+            Height="35"
+            Margin="0,0,0,15"
+            Command="{Binding UndoCommand}"
+            Content="↩ Back" />
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+    </Grid>
+</Window>

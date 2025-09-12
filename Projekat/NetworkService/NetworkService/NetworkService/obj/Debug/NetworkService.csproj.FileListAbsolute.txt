@@ -1,0 +1,40 @@
+D:\!FTN\!HCI VEZBE\2023-24\PZ2\Visual Studio\NetworkService\NetworkService\NetworkService\bin\Debug\NetworkService.exe.config
+D:\!FTN\!HCI VEZBE\2023-24\PZ2\Visual Studio\NetworkService\NetworkService\NetworkService\bin\Debug\NetworkService.exe
+D:\!FTN\!HCI VEZBE\2023-24\PZ2\Visual Studio\NetworkService\NetworkService\NetworkService\bin\Debug\NetworkService.pdb
+D:\!FTN\!HCI VEZBE\2023-24\PZ2\Visual Studio\NetworkService\NetworkService\NetworkService\obj\Debug\NetworkService.csproj.AssemblyReference.cache
+D:\!FTN\!HCI VEZBE\2023-24\PZ2\Visual Studio\NetworkService\NetworkService\NetworkService\obj\Debug\MainWindow.g.cs
+D:\!FTN\!HCI VEZBE\2023-24\PZ2\Visual Studio\NetworkService\NetworkService\NetworkService\obj\Debug\App.g.cs
+D:\!FTN\!HCI VEZBE\2023-24\PZ2\Visual Studio\NetworkService\NetworkService\NetworkService\obj\Debug\NetworkService_MarkupCompile.cache
+D:\!FTN\!HCI VEZBE\2023-24\PZ2\Visual Studio\NetworkService\NetworkService\NetworkService\obj\Debug\NetworkService_MarkupCompile.lref
+D:\!FTN\!HCI VEZBE\2023-24\PZ2\Visual Studio\NetworkService\NetworkService\NetworkService\obj\Debug\MainWindow.baml
+D:\!FTN\!HCI VEZBE\2023-24\PZ2\Visual Studio\NetworkService\NetworkService\NetworkService\obj\Debug\NetworkService.g.resources
+D:\!FTN\!HCI VEZBE\2023-24\PZ2\Visual Studio\NetworkService\NetworkService\NetworkService\obj\Debug\NetworkService.Properties.Resources.resources
+D:\!FTN\!HCI VEZBE\2023-24\PZ2\Visual Studio\NetworkService\NetworkService\NetworkService\obj\Debug\NetworkService.csproj.GenerateResource.cache
+D:\!FTN\!HCI VEZBE\2023-24\PZ2\Visual Studio\NetworkService\NetworkService\NetworkService\obj\Debug\NetworkService.csproj.CoreCompileInputs.cache
+D:\!FTN\!HCI VEZBE\2023-24\PZ2\Visual Studio\NetworkService\NetworkService\NetworkService\obj\Debug\NetworkService.exe
+D:\!FTN\!HCI VEZBE\2023-24\PZ2\Visual Studio\NetworkService\NetworkService\NetworkService\obj\Debug\NetworkService.pdb
+C:\Users\Korisnik\OneDrive\Desktop\FAKULTET\VI. SEMESTAR\IUIS\VEZBE\PROJEKAT2\PSI IUIS - PZ2 - početni projekat\Projekat\NetworkService\NetworkService\NetworkService\obj\Debug\NetworkService.csproj.AssemblyReference.cache
+C:\Users\Korisnik\OneDrive\Desktop\FAKULTET\VI. SEMESTAR\IUIS\VEZBE\PROJEKAT2\PSI IUIS - PZ2 - početni projekat\Projekat\NetworkService\NetworkService\NetworkService\obj\Debug\MainWindow.g.cs
+C:\Users\Korisnik\OneDrive\Desktop\FAKULTET\VI. SEMESTAR\IUIS\VEZBE\PROJEKAT2\PSI IUIS - PZ2 - početni projekat\Projekat\NetworkService\NetworkService\NetworkService\obj\Debug\Views\HomeView.g.cs
+C:\Users\Korisnik\OneDrive\Desktop\FAKULTET\VI. SEMESTAR\IUIS\VEZBE\PROJEKAT2\PSI IUIS - PZ2 - početni projekat\Projekat\NetworkService\NetworkService\NetworkService\obj\Debug\Views\MeasurementGraphView.g.cs
+C:\Users\Korisnik\OneDrive\Desktop\FAKULTET\VI. SEMESTAR\IUIS\VEZBE\PROJEKAT2\PSI IUIS - PZ2 - početni projekat\Projekat\NetworkService\NetworkService\NetworkService\obj\Debug\Views\NetworkDisplayView.g.cs
+C:\Users\Korisnik\OneDrive\Desktop\FAKULTET\VI. SEMESTAR\IUIS\VEZBE\PROJEKAT2\PSI IUIS - PZ2 - početni projekat\Projekat\NetworkService\NetworkService\NetworkService\obj\Debug\Views\NetworkEntitiesView.g.cs
+C:\Users\Korisnik\OneDrive\Desktop\FAKULTET\VI. SEMESTAR\IUIS\VEZBE\PROJEKAT2\PSI IUIS - PZ2 - početni projekat\Projekat\NetworkService\NetworkService\NetworkService\obj\Debug\App.g.cs
+C:\Users\Korisnik\OneDrive\Desktop\FAKULTET\VI. SEMESTAR\IUIS\VEZBE\PROJEKAT2\PSI IUIS - PZ2 - početni projekat\Projekat\NetworkService\NetworkService\NetworkService\obj\Debug\NetworkService_MarkupCompile.cache
+C:\Users\Korisnik\OneDrive\Desktop\FAKULTET\VI. SEMESTAR\IUIS\VEZBE\PROJEKAT2\PSI IUIS - PZ2 - početni projekat\Projekat\NetworkService\NetworkService\NetworkService\obj\Debug\NetworkService_MarkupCompile.lref
+C:\Users\Korisnik\OneDrive\Desktop\FAKULTET\VI. SEMESTAR\IUIS\VEZBE\PROJEKAT2\PSI IUIS - PZ2 - početni projekat\Projekat\NetworkService\NetworkService\NetworkService\obj\Debug\Views\HomeView.baml
+C:\Users\Korisnik\OneDrive\Desktop\FAKULTET\VI. SEMESTAR\IUIS\VEZBE\PROJEKAT2\PSI IUIS - PZ2 - početni projekat\Projekat\NetworkService\NetworkService\NetworkService\obj\Debug\Views\MeasurementGraphView.baml
+C:\Users\Korisnik\OneDrive\Desktop\FAKULTET\VI. SEMESTAR\IUIS\VEZBE\PROJEKAT2\PSI IUIS - PZ2 - početni projekat\Projekat\NetworkService\NetworkService\NetworkService\obj\Debug\Views\NetworkDisplayView.baml
+C:\Users\Korisnik\OneDrive\Desktop\FAKULTET\VI. SEMESTAR\IUIS\VEZBE\PROJEKAT2\PSI IUIS - PZ2 - početni projekat\Projekat\NetworkService\NetworkService\NetworkService\obj\Debug\Views\NetworkEntitiesView.baml
+C:\Users\Korisnik\OneDrive\Desktop\FAKULTET\VI. SEMESTAR\IUIS\VEZBE\PROJEKAT2\PSI IUIS - PZ2 - početni projekat\Projekat\NetworkService\NetworkService\NetworkService\obj\Debug\NetworkService.exe
+C:\Users\Korisnik\OneDrive\Desktop\FAKULTET\VI. SEMESTAR\IUIS\VEZBE\PROJEKAT2\PSI IUIS - PZ2 - početni projekat\Projekat\NetworkService\NetworkService\NetworkService\obj\Debug\NetworkService.pdb
+C:\Users\Korisnik\OneDrive\Desktop\FAKULTET\VI. SEMESTAR\IUIS\VEZBE\PROJEKAT2\PSI IUIS - PZ2 - početni projekat\Projekat\NetworkService\NetworkService\NetworkService\bin\Debug\NetworkService.exe.config
+C:\Users\Korisnik\OneDrive\Desktop\FAKULTET\VI. SEMESTAR\IUIS\VEZBE\PROJEKAT2\PSI IUIS - PZ2 - početni projekat\Projekat\NetworkService\NetworkService\NetworkService\bin\Debug\NetworkService.exe
+C:\Users\Korisnik\OneDrive\Desktop\FAKULTET\VI. SEMESTAR\IUIS\VEZBE\PROJEKAT2\PSI IUIS - PZ2 - početni projekat\Projekat\NetworkService\NetworkService\NetworkService\bin\Debug\NetworkService.pdb
+C:\Users\Korisnik\OneDrive\Desktop\FAKULTET\VI. SEMESTAR\IUIS\VEZBE\PROJEKAT2\PSI IUIS - PZ2 - početni projekat\Projekat\NetworkService\NetworkService\NetworkService\obj\Debug\MainWindow.baml
+C:\Users\Korisnik\OneDrive\Desktop\FAKULTET\VI. SEMESTAR\IUIS\VEZBE\PROJEKAT2\PSI IUIS - PZ2 - početni projekat\Projekat\NetworkService\NetworkService\NetworkService\obj\Debug\NetworkService.g.resources
+C:\Users\Korisnik\OneDrive\Desktop\FAKULTET\VI. SEMESTAR\IUIS\VEZBE\PROJEKAT2\PSI IUIS - PZ2 - početni projekat\Projekat\NetworkService\NetworkService\NetworkService\obj\Debug\NetworkService.Properties.Resources.resources
+C:\Users\Korisnik\OneDrive\Desktop\FAKULTET\VI. SEMESTAR\IUIS\VEZBE\PROJEKAT2\PSI IUIS - PZ2 - početni projekat\Projekat\NetworkService\NetworkService\NetworkService\obj\Debug\NetworkService.csproj.GenerateResource.cache
+C:\Users\Korisnik\OneDrive\Desktop\FAKULTET\VI. SEMESTAR\IUIS\VEZBE\PROJEKAT2\PSI IUIS - PZ2 - početni projekat\Projekat\NetworkService\NetworkService\NetworkService\obj\Debug\NetworkService.csproj.CoreCompileInputs.cache
+C:\Users\Korisnik\OneDrive\Desktop\FAKULTET\VI. SEMESTAR\IUIS\VEZBE\PROJEKAT2\PSI IUIS - PZ2 - početni projekat\Projekat\NetworkService\NetworkService\NetworkService\obj\Debug\NetworkService.exe.config
+C:\Users\Korisnik\OneDrive\Desktop\FAKULTET\VI. SEMESTAR\IUIS\VEZBE\PROJEKAT2\PSI IUIS - PZ2 - početni projekat\Projekat\NetworkService\NetworkService\NetworkService\obj\Debug\GeneratedInternalTypeHelper.g.cs
