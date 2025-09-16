@@ -1,6 +1,7 @@
 ﻿using MVVM1;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -44,12 +45,18 @@ namespace NetworkService.ViewModel
             HomeViewModel = new HomeViewModel();
             NetworkEntitiesViewModel = new NetworkEntitiesViewModel();
             NetworkDisplayViewModel = new NetworkDisplayViewModel();
-            MeasurementGraphViewModel = new MeasurementGraphViewModel();
+            MeasurementGraphViewModel = new MeasurementGraphViewModel(NetworkEntitiesViewModel);
             HomeViewModel.SetMainWindowReference(this);
             CurrentViewModel = HomeViewModel;
 
             UndoCommand = new MyICommand(OnUndo);
             HomeCommand = new MyICommand(OnHome);
+
+            //DODATO
+            NetworkEntitiesViewModel.EntitiesChanged += () =>
+            {
+                NotifySimulatorToUpdateCount();
+            };
         }
 
         private void OnUndo()
@@ -90,14 +97,15 @@ namespace NetworkService.ViewModel
                              * duzinu liste koja sadrzi sve objekte pod monitoringom, odnosno
                              * njihov ukupan broj (NE BROJATI OD NULE, VEC POSLATI UKUPAN BROJ)
                              * */
-                            Byte[] data = System.Text.Encoding.ASCII.GetBytes(count.ToString());
+                            int entityCount = NetworkEntitiesViewModel?.Entities?.Count ?? count;
+                            Byte[] data = System.Text.Encoding.ASCII.GetBytes(entityCount.ToString());
                             stream.Write(data, 0, data.Length);
                         }
                         else
                         {
                             //U suprotnom, server je poslao promenu stanja nekog objekta u sistemu
                             Console.WriteLine(incomming); //Na primer: "Entitet_1:272"
-
+                            ProcessIncomingMessage(incomming);
                             //################ IMPLEMENTACIJA ####################
                             // Obraditi poruku kako bi se dobile informacije o izmeni
                             // Azuriranje potrebnih stvari u aplikaciji
@@ -109,6 +117,68 @@ namespace NetworkService.ViewModel
 
             listeningThread.IsBackground = true;
             listeningThread.Start();
+        }
+
+        private void ProcessIncomingMessage(string message)
+        {
+            try
+            {
+                string[] parts = message.Split(':');
+                if (parts.Length != 2) return;
+
+                string entityName = parts[0];
+                if (!int.TryParse(parts[1], out int newValue)) return;
+
+                var entity = NetworkEntitiesViewModel.Entities.FirstOrDefault(e => e.Name.Replace(" ", "_") == entityName);
+
+                if(entity != null)
+                {
+                    App.Current.Dispatcher.Invoke(() =>
+                    {
+                        entity.LastValue = newValue;
+                        MeasurementGraphViewModel.AddMeasurementRealTime(entity.Name.Replace(" ", "_"), newValue);
+                    });
+                }
+
+                LogMeasurement(entityName, newValue);
+            } catch (Exception ex)
+            {
+                Console.WriteLine("Error while processing the message: " + ex.Message);
+            }
+        }
+
+        private void LogMeasurement(string entityName, int value)
+        {
+            string logLine = $"{DateTime.Now:yyyy-MM-dd HH:mm:ss} | {entityName} | {value}";
+            string logPath = "log.txt"; 
+            try
+            {
+                File.AppendAllText(logPath, logLine + Environment.NewLine);
+            } catch (Exception ex)
+            {
+                Console.WriteLine("Error while writing into the log.txt file: " + ex.Message);
+            }
+        }
+            
+        //DODATO    
+        private void NotifySimulatorToUpdateCount()
+        {
+            Task.Run(() =>
+            {
+                try
+                {
+                    using (var client = new TcpClient("localhost", 25676))
+                    using (var stream = client.GetStream())
+                    {
+                        byte[] data = Encoding.ASCII.GetBytes("UpdateCount");
+                        stream.Write(data, 0, data.Length);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error notifying simulator: " + ex.Message);
+                }
+            });
         }
     }
 }

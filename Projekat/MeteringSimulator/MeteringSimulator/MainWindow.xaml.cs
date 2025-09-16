@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,6 +35,9 @@ namespace MeteringSimulator
             ProjectTopics.ItemsSource = new List<string>() { "T1", "T2", "T3", "T4", "T5", "T6", "T7" };
 
             RestartButton.IsEnabled = false;
+
+            //DODATO
+            ListenForUpdates();
         }
 
         private void askForCount()
@@ -120,6 +124,7 @@ namespace MeteringSimulator
                 else if (ProjectTopics.SelectedValue.ToString().Equals("T5"))
                 {
                     value = r.Next(520, 855);
+
                 }
                 else if (ProjectTopics.SelectedValue.ToString().Equals("T6"))
                 {
@@ -174,5 +179,32 @@ namespace MeteringSimulator
         {
             this.DragMove();
         }
+
+        //DODATO
+        private void ListenForUpdates()
+        {
+            var tcp = new TcpListener(IPAddress.Any, 25676); // Koristi drugi port, npr. 25676
+            tcp.Start();
+            Task.Run(() =>
+            {
+                while (true)
+                {
+                    var client = tcp.AcceptTcpClient();
+                    using (var stream = client.GetStream())
+                    {
+                        byte[] buffer = new byte[1024];
+                        int bytesRead = stream.Read(buffer, 0, buffer.Length);
+                        string message = Encoding.ASCII.GetString(buffer, 0, bytesRead);
+
+                        if (message == "UpdateCount")
+                        {
+                            Dispatcher.Invoke(() => askForCount()); // update broj objekata
+                        }
+                    }
+                    client.Close();
+                }
+            });
+        }
+
     }
 }

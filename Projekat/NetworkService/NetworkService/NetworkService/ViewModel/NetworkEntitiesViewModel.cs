@@ -13,6 +13,7 @@ namespace NetworkService.ViewModel
     {
         private string _title = "Network Entities";
 
+        public Action EntitiesChanged;
         public string Title
         {
             get
@@ -31,7 +32,7 @@ namespace NetworkService.ViewModel
 
         private DailyTraffic _selectedEntity;
 
-        private int _id;
+        private string _idText;
         private string _nameText;
         private int _lastValue;
         private TrafficType _trafficType;
@@ -41,7 +42,6 @@ namespace NetworkService.ViewModel
         private bool _isLessChecked;
         private bool _isGreaterChecked;
         private bool _isEqualChecked;
-
 
         public DailyTraffic SelectedEntity
         {
@@ -59,18 +59,18 @@ namespace NetworkService.ViewModel
                 }
             }
         }
-        public int Id
+        public string IdText
         {
             get
             {
-                return _id;
+                return _idText;
             }
             set
             {
-                if( _id != value)
+                if( _idText != value)
                 {
-                    _id = value;
-                    OnPropertyChanged(nameof(Id));
+                    _idText = value;
+                    OnPropertyChanged(nameof(IdText));
                 }
             }
         }
@@ -236,8 +236,8 @@ namespace NetworkService.ViewModel
 
             Entities = new ObservableCollection<DailyTraffic>
             {
-                new DailyTraffic { Id = 1, Name = "Semafor 1", LastValue = 120, TrafficType = TrafficTypesList[0] },
-                new DailyTraffic { Id = 2, Name = "Semafor 2", LastValue = 300, TrafficType = TrafficTypesList[1] }
+                new DailyTraffic { Id = 1, Name = "Entitet_0", LastValue = 120, TrafficType = TrafficTypesList[0] },
+                new DailyTraffic { Id = 2, Name = "Entitet_1", LastValue = 300, TrafficType = TrafficTypesList[1] }
             };
 
             AllEntities = new ObservableCollection<DailyTraffic>(Entities);
@@ -245,24 +245,37 @@ namespace NetworkService.ViewModel
 
         private void OnAdd()
         {
-            if (Entities.Any(e => e.Id == Id)) return;
+            if (!int.TryParse(IdText, out int parsedId))
+                return; 
+
+            if (Entities.Any(e => e.Id == parsedId))
+                return;
 
             var newEntity = new DailyTraffic
             {
-                Id = Id,
+                Id = parsedId,                
                 Name = NameText,
                 LastValue = LastValue,
                 TrafficType = SelectedTrafficType
             };
 
             Entities.Add(newEntity);
-            OnReset();
+            AllEntities.Add(newEntity);
+
+            IdText = string.Empty;
+            NameText = string.Empty;
+            if (TrafficTypesList.Count > 0)
+                SelectedTrafficType = TrafficTypesList[0];
+            
+            OnEntitiesChanged();
         }
 
         private void OnDelete()
         {
             if (SelectedEntity != null)
                 Entities.Remove(SelectedEntity);
+
+            OnEntitiesChanged();
         }
 
         private bool CanDelete()
@@ -277,7 +290,7 @@ namespace NetworkService.ViewModel
 
         private void OnReset()
         {
-            Id = 0;
+            IdText = string.Empty;
             NameText = string.Empty;
             LastValue = 0;
 
@@ -337,6 +350,11 @@ namespace NetworkService.ViewModel
             {
                 Entities.Add(e);
             }
+        }
+
+        private void OnEntitiesChanged()
+        {
+            EntitiesChanged?.Invoke();
         }
     }
 }
