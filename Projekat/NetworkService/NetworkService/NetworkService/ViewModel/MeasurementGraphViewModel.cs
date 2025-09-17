@@ -81,7 +81,7 @@ namespace NetworkService.ViewModel
             }
             set
             {
-                if(_measurements != value)
+                if (_measurements != value)
                 {
                     _measurements = value;
                     OnPropertyChanged(nameof(Measurement));
@@ -97,7 +97,7 @@ namespace NetworkService.ViewModel
             }
             set
             {
-                if( _bars != value)
+                if (_bars != value)
                 {
                     _bars = value;
                     OnPropertyChanged(nameof(Bars));
@@ -163,13 +163,13 @@ namespace NetworkService.ViewModel
 
         private void UpdateBars()
         {
-         
+
             Bars.Clear();
             if (Measurements.Count == 0) return;
 
             var last5 = Measurements.ToList();
 
-            double canvasHeight = 330; 
+            double canvasHeight = 310;
             double scale = canvasHeight / MaxValue;
             double barWidth = 40;
 

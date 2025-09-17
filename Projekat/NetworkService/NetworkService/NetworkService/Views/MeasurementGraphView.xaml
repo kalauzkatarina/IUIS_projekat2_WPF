@@ -29,7 +29,7 @@
                 SelectedItem="{Binding SelectedEntity}" />
 
             <!--  Y osu i Bars  -->
-            <Grid Margin="50,20,20,20">
+            <Grid Margin="30,20,20,20">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="40" />
                     <ColumnDefinition Width="*" />
@@ -48,7 +48,7 @@
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
                             <TextBlock
-                                Margin="0,10"
+                                Margin="0,0,5,0"
                                 HorizontalAlignment="Right"
                                 VerticalAlignment="Bottom"
                                 Text="{Binding}" />
@@ -56,36 +56,108 @@
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
 
+                <Grid Grid.Column="1">
+                    <Canvas Height="370">
+                        <!--  Y axis  -->
+                        <Line
+                            Stroke="Black"
+                            StrokeThickness="2"
+                            X1="0"
+                            X2="0"
+                            Y1="0"
+                            Y2="370" />
+                        <!--  Y axis arrow  -->
+                        <Polyline
+                            Fill="Black"
+                            Points="-5,0  0,-10  5,0"
+                            Stroke="Black"
+                            StrokeThickness="2" />
 
-                <ItemsControl Grid.Column="1" ItemsSource="{Binding Bars}">
-                    <ItemsControl.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <StackPanel
-                                Height="400"
-                                VerticalAlignment="Bottom"
-                                Orientation="Horizontal" />
-                        </ItemsPanelTemplate>
-                    </ItemsControl.ItemsPanel>
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel
-                                Margin="5,0,5,0"
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Bottom">
-                                <Border
-                                    Width="{Binding Width}"
-                                    Height="{Binding Height}"
-                                    Background="{Binding Fill}" />
-                                <TextBlock
-                                    Margin="0,2,0,0"
+                        <!--  X axis  -->
+                        <Line
+                            Stroke="Black"
+                            StrokeThickness="2"
+                            X1="0"
+                            X2="320"
+                            Y1="370"
+                            Y2="370" />
+
+                        <Polyline
+                            Fill="Black"
+                            Points="320,365  330,370  320,375"
+                            Stroke="Black"
+                            StrokeThickness="2" />
+
+                    </Canvas>
+
+                    <ItemsControl ItemsSource="{Binding Bars}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel
+                                    Height="400"
+                                    VerticalAlignment="Bottom"
+                                    Orientation="Horizontal" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel
+                                    Margin="5,0,5,0"
                                     HorizontalAlignment="Center"
-                                    FontSize="10"
-                                    Text="{Binding Label}" />
-                            </StackPanel>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
+                                    VerticalAlignment="Bottom">
+                                    <Border
+                                        Width="{Binding Width}"
+                                        Height="{Binding Height}"
+                                        Background="{Binding Fill}" />
+                                    <TextBlock
+                                        Margin="0,2,0,0"
+                                        HorizontalAlignment="Center"
+                                        FontSize="10"
+                                        Text="{Binding Label}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </Grid>
             </Grid>
+
+
+            <!--  Legenda  -->
+            <StackPanel
+                HorizontalAlignment="Center"
+                Orientation="Horizontal">
+                <!--  Valid  -->
+                <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+                    <Rectangle
+                        Width="15"
+                        Height="15"
+                        Fill="Green"
+                        Stroke="Black"
+                        StrokeThickness="0.5" />
+                    <TextBlock
+                        Margin="5,0,0,0"
+                        VerticalAlignment="Center"
+                        Text="Valid values" />
+                </StackPanel>
+
+                <!--  Invalid  -->
+                <StackPanel
+                    Margin="20,0,0,0"
+                    VerticalAlignment="Center"
+                    Orientation="Horizontal">
+                    <Rectangle
+                        Width="15"
+                        Height="15"
+                        Fill="Red"
+                        Stroke="Black"
+                        StrokeThickness="0.5" />
+                    <TextBlock
+                        Margin="5,0,0,0"
+                        VerticalAlignment="Center"
+                        Text="Invalid values" />
+                </StackPanel>
+            </StackPanel>
+
         </StackPanel>
     </Grid>
 </UserControl>

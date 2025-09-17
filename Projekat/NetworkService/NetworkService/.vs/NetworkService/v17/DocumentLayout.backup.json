@@ -3,58 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{134D87AD-F428-469F-A98E-5F007EDD241B}|..\\..\\MeteringSimulator\\MeteringSimulator\\MeteringSimulator.csproj|c:\\users\\korisnik\\onedrive\\desktop\\iuis_projekat2_wpf\\projekat\\meteringsimulator\\meteringsimulator\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|c:\\users\\korisnik\\onedrive\\desktop\\iuis_projekat2_wpf\\projekat\\networkservice\\networkservice\\networkservice\\viewmodel\\measurementgraphviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|solutionrelative:networkservice\\viewmodel\\measurementgraphviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\networkservice\\viewmodel\\networkentitiesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|solutionrelative:networkservice\\viewmodel\\networkentitiesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\networkservice\\viewmodel\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|solutionrelative:networkservice\\viewmodel\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|c:\\users\\korisnik\\onedrive\\desktop\\iuis_projekat2_wpf\\projekat\\networkservice\\networkservice\\networkservice\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|solutionrelative:networkservice\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|c:\\users\\korisnik\\onedrive\\desktop\\iuis_projekat2_wpf\\projekat\\networkservice\\networkservice\\networkservice\\views\\networkdisplayview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|solutionrelative:networkservice\\views\\networkdisplayview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|c:\\users\\korisnik\\onedrive\\desktop\\iuis_projekat2_wpf\\projekat\\networkservice\\networkservice\\networkservice\\viewmodel\\networkdisplayviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|solutionrelative:networkservice\\viewmodel\\networkdisplayviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|c:\\users\\korisnik\\onedrive\\desktop\\iuis_projekat2_wpf\\projekat\\networkservice\\networkservice\\networkservice\\viewmodel\\networkentitiesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|solutionrelative:networkservice\\viewmodel\\networkentitiesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|c:\\users\\korisnik\\onedrive\\desktop\\iuis_projekat2_wpf\\projekat\\networkservice\\networkservice\\networkservice\\views\\networkentitiesview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|solutionrelative:networkservice\\views\\networkentitiesview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\networkservice\\views\\measurementgraphview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|solutionrelative:networkservice\\views\\measurementgraphview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\networkservice\\views\\networkentitiesview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|solutionrelative:networkservice\\views\\networkentitiesview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\networkservice\\model\\dailytraffic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|solutionrelative:networkservice\\model\\dailytraffic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{134D87AD-F428-469F-A98E-5F007EDD241B}|..\\..\\MeteringSimulator\\MeteringSimulator\\MeteringSimulator.csproj|c:\\users\\korisnik\\onedrive\\desktop\\iuis_projekat2_wpf\\projekat\\meteringsimulator\\meteringsimulator\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\networkservice\\views\\homeview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|solutionrelative:networkservice\\views\\homeview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\networkservice\\views\\networkdisplayview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|solutionrelative:networkservice\\views\\networkdisplayview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\networkservice\\viewmodel\\homeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|solutionrelative:networkservice\\viewmodel\\homeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\networkservice\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|solutionrelative:networkservice\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|c:\\users\\korisnik\\onedrive\\desktop\\iuis_projekat2_wpf\\projekat\\networkservice\\networkservice\\networkservice\\viewmodel\\measurementgraphviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|solutionrelative:networkservice\\viewmodel\\measurementgraphviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -64,96 +34,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\NetworkService\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "NetworkService\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\NetworkService\\MainWindow.xaml.cs",
-              "RelativeToolTip": "NetworkService\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T08:22:57.232Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "NetworkDisplayViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\NetworkService\\ViewModel\\NetworkDisplayViewModel.cs",
-              "RelativeDocumentMoniker": "NetworkService\\ViewModel\\NetworkDisplayViewModel.cs",
-              "ToolTip": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\NetworkService\\ViewModel\\NetworkDisplayViewModel.cs",
-              "RelativeToolTip": "NetworkService\\ViewModel\\NetworkDisplayViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T08:17:38.529Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "DailyTraffic.cs",
-              "DocumentMoniker": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\NetworkService\\Model\\DailyTraffic.cs",
-              "RelativeDocumentMoniker": "NetworkService\\Model\\DailyTraffic.cs",
-              "ToolTip": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\NetworkService\\Model\\DailyTraffic.cs",
-              "RelativeToolTip": "NetworkService\\Model\\DailyTraffic.cs",
-              "ViewState": "AgIAADwAAAAAAAAAAAAUwEUAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-15T20:26:55.12Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MeasurementGraphViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\NetworkService\\ViewModel\\MeasurementGraphViewModel.cs",
-              "RelativeDocumentMoniker": "NetworkService\\ViewModel\\MeasurementGraphViewModel.cs",
-              "ToolTip": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\NetworkService\\ViewModel\\MeasurementGraphViewModel.cs",
-              "RelativeToolTip": "NetworkService\\ViewModel\\MeasurementGraphViewModel.cs",
-              "ViewState": "AgIAAJ0AAAAAAAAAAADwv6sAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-15T20:24:38.824Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\MeteringSimulator\\MeteringSimulator\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "..\\..\\MeteringSimulator\\MeteringSimulator\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\MeteringSimulator\\MeteringSimulator\\MainWindow.xaml.cs",
-              "RelativeToolTip": "..\\..\\MeteringSimulator\\MeteringSimulator\\MainWindow.xaml.cs",
-              "ViewState": "AgIAALUAAAAAAAAAAAAmwLYAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-15T19:07:12.164Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\MeteringSimulator\\MeteringSimulator\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "..\\..\\MeteringSimulator\\MeteringSimulator\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\MeteringSimulator\\MeteringSimulator\\MainWindow.xaml",
-              "RelativeToolTip": "..\\..\\MeteringSimulator\\MeteringSimulator\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-09-15T19:07:09.764Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MainWindowViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\NetworkService\\ViewModel\\MainWindowViewModel.cs",
-              "RelativeDocumentMoniker": "NetworkService\\ViewModel\\MainWindowViewModel.cs",
-              "ToolTip": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\NetworkService\\ViewModel\\MainWindowViewModel.cs",
-              "RelativeToolTip": "NetworkService\\ViewModel\\MainWindowViewModel.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAADwvzYAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-15T19:06:56.937Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -162,36 +44,64 @@
               "RelativeDocumentMoniker": "NetworkService\\ViewModel\\NetworkEntitiesViewModel.cs",
               "ToolTip": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\NetworkService\\ViewModel\\NetworkEntitiesViewModel.cs",
               "RelativeToolTip": "NetworkService\\ViewModel\\NetworkEntitiesViewModel.cs",
-              "ViewState": "AgIAAAUBAAAAAAAAAAAQwBUBAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAEgBAAAAAAAAAAAowFgBAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T20:23:12.615Z",
+              "WhenOpened": "2025-09-17T10:48:04.149Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
               "Title": "NetworkEntitiesView.xaml",
               "DocumentMoniker": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\NetworkService\\Views\\NetworkEntitiesView.xaml",
               "RelativeDocumentMoniker": "NetworkService\\Views\\NetworkEntitiesView.xaml",
               "ToolTip": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\NetworkService\\Views\\NetworkEntitiesView.xaml",
               "RelativeToolTip": "NetworkService\\Views\\NetworkEntitiesView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-09-12T20:22:21.851Z"
+              "WhenOpened": "2025-09-17T10:48:03.055Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 1,
+              "Title": "NetworkDisplayViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\NetworkService\\ViewModel\\NetworkDisplayViewModel.cs",
+              "RelativeDocumentMoniker": "NetworkService\\ViewModel\\NetworkDisplayViewModel.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\NetworkService\\ViewModel\\NetworkDisplayViewModel.cs",
+              "RelativeToolTip": "NetworkService\\ViewModel\\NetworkDisplayViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T10:45:23.988Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "NetworkDisplayView.xaml",
               "DocumentMoniker": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\NetworkService\\Views\\NetworkDisplayView.xaml",
               "RelativeDocumentMoniker": "NetworkService\\Views\\NetworkDisplayView.xaml",
               "ToolTip": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\NetworkService\\Views\\NetworkDisplayView.xaml",
               "RelativeToolTip": "NetworkService\\Views\\NetworkDisplayView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-09-12T20:24:09.938Z"
+              "WhenOpened": "2025-09-17T10:45:19.137Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
+              "Title": "MeasurementGraphViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\NetworkService\\ViewModel\\MeasurementGraphViewModel.cs",
+              "RelativeDocumentMoniker": "NetworkService\\ViewModel\\MeasurementGraphViewModel.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\NetworkService\\ViewModel\\MeasurementGraphViewModel.cs",
+              "RelativeToolTip": "NetworkService\\ViewModel\\MeasurementGraphViewModel.cs",
+              "ViewState": "AgIAAJoAAAAAAAAAAAAQwKsAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T20:24:38.824Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "MeasurementGraphView.xaml",
               "DocumentMoniker": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\NetworkService\\Views\\MeasurementGraphView.xaml",
               "RelativeDocumentMoniker": "NetworkService\\Views\\MeasurementGraphView.xaml",
@@ -200,40 +110,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-09-12T20:22:18.535Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "HomeView.xaml",
-              "DocumentMoniker": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\NetworkService\\Views\\HomeView.xaml",
-              "RelativeDocumentMoniker": "NetworkService\\Views\\HomeView.xaml",
-              "ToolTip": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\NetworkService\\Views\\HomeView.xaml",
-              "RelativeToolTip": "NetworkService\\Views\\HomeView.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-09-12T19:59:42.504Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\NetworkService\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "NetworkService\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\NetworkService\\MainWindow.xaml",
-              "RelativeToolTip": "NetworkService\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-09-12T20:01:18.447Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "HomeViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\NetworkService\\ViewModel\\HomeViewModel.cs",
-              "RelativeDocumentMoniker": "NetworkService\\ViewModel\\HomeViewModel.cs",
-              "ToolTip": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\NetworkService\\ViewModel\\HomeViewModel.cs",
-              "RelativeToolTip": "NetworkService\\ViewModel\\HomeViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T19:45:29.243Z"
             }
           ]
         }
