@@ -44,7 +44,7 @@ namespace NetworkService.ViewModel
             createListener(); //Povezivanje sa serverskom aplikacijom
             HomeViewModel = new HomeViewModel();
             NetworkEntitiesViewModel = new NetworkEntitiesViewModel();
-            NetworkDisplayViewModel = new NetworkDisplayViewModel();
+            NetworkDisplayViewModel = new NetworkDisplayViewModel(NetworkEntitiesViewModel);
             MeasurementGraphViewModel = new MeasurementGraphViewModel(NetworkEntitiesViewModel);
             HomeViewModel.SetMainWindowReference(this);
             CurrentViewModel = HomeViewModel;

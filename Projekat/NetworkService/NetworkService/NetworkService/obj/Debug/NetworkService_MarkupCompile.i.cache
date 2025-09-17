@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Korisnik\OneDrive\Desktop\FAKULTET\VI. SEMESTAR\IUIS\VEZBE\PROJEKAT2\PSI IUIS - PZ2 - početni projekat\Projekat\NetworkService\NetworkService\NetworkService\obj\Debug\
+C:\Users\Korisnik\OneDrive\Desktop\IUIS_projekat2_WPF\Projekat\NetworkService\NetworkService\NetworkService\obj\Debug\
 NetworkService
 none
 false
 DEBUG;TRACE
-C:\Users\Korisnik\OneDrive\Desktop\FAKULTET\VI. SEMESTAR\IUIS\VEZBE\PROJEKAT2\PSI IUIS - PZ2 - početni projekat\Projekat\NetworkService\NetworkService\NetworkService\App.xaml
+C:\Users\Korisnik\OneDrive\Desktop\IUIS_projekat2_WPF\Projekat\NetworkService\NetworkService\NetworkService\App.xaml
 527111719
 
-20-72485666
+211314442500
 13-1310406943
 MainWindow.xaml;Views\HomeView.xaml;Views\MeasurementGraphView.xaml;Views\NetworkDisplayView.xaml;Views\NetworkEntitiesView.xaml;
 
-False
+True
 
