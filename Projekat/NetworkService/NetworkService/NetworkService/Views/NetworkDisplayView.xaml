@@ -18,13 +18,19 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <TextBlock
-            Grid.Row="0"
-            Margin="0,20,0,10"
-            HorizontalAlignment="Center"
-            FontSize="20"
-            FontWeight="Bold"
-            Text="{Binding Title}" />
+        <Grid Grid.Row="0" Margin="0,15,0,0">
+            <TextBlock
+                HorizontalAlignment="Center"
+                FontSize="20"
+                FontWeight="Bold"
+                Text="{Binding Title}" />
+            <Button
+                Width="80"
+                Height="25"
+                HorizontalAlignment="Right"
+                Command="{Binding ToggleConnectModeCommand}"
+                Content="Connect" />
+        </Grid>
 
         <TreeView
             Grid.Row="1"
@@ -60,8 +66,8 @@
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <Border
-                        Width="120"
-                        Height="120"
+                        Width="80"
+                        Height="100"
                         Margin="5"
                         behaviors:DragDropBehavior.DropCommand="{Binding DropCommand}"
                         behaviors:DragDropBehavior.EnableDrag="True"

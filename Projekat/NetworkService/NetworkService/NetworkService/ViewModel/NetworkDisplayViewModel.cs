@@ -6,6 +6,8 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Media;
 
 namespace NetworkService.ViewModel
 {
@@ -40,7 +42,7 @@ namespace NetworkService.ViewModel
             }
             set
             {
-                if(_slectedTrafficType != value)
+                if (_slectedTrafficType != value)
                 {
                     _slectedTrafficType = value;
                     OnPropertyChanged(nameof(SelectedTrafficType));
@@ -87,7 +89,7 @@ namespace NetworkService.ViewModel
 
             CanvasSlots = new ObservableCollection<CanvasSlot>();
 
-            for(int i = 0; i < 12; i++)
+            for (int i = 0; i < 12; i++)
             {
                 CanvasSlots.Add(new CanvasSlot { SlotId = i + 1 });
             }
@@ -106,22 +108,30 @@ namespace NetworkService.ViewModel
         private void UpdateEntitiesForSelectedType()
         {
             EntitiesForSelectedType.Clear();
-            foreach(var entity in _networkEntitiesViewModel.Entities.Where(e => e.TrafficType == SelectedTrafficType))
+            foreach (var entity in _networkEntitiesViewModel.Entities.Where(e => e.TrafficType == SelectedTrafficType))
             {
                 EntitiesForSelectedType.Add(entity);
             }
         }
 
-        public void PlaceEntityOnCanvas(DailyTraffic entity, CanvasSlot slot)
+        public void PlaceEntityOnCanvas(DailyTraffic entity, CanvasSlot targetSlot)
         {
-            if (slot.Entity != null) return;
+            if (targetSlot.Entity != null) return;
 
-            slot.Entity = entity;
+            // Pronađi slot gde je trenutno
+            var currentSlot = CanvasSlots.FirstOrDefault(s => s.Entity == entity);
+            if (currentSlot != null)
+            {
+                currentSlot.Entity = null;
+            }
 
-            // uklanjanje iz globalne liste
-            _networkEntitiesViewModel.Entities.Remove(entity);
+            targetSlot.Entity = entity;
 
-            // uklanjanje i iz odgovarajuće grupe u TreeView
+            // uklanjanje iz globalne liste samo ako nije na Canvasu
+            if (!_networkEntitiesViewModel.Entities.Contains(entity))
+                _networkEntitiesViewModel.Entities.Remove(entity);
+
+            // uklanjanje iz TreeView grupe
             var group = TrafficRoot.Children.FirstOrDefault(g => g.TrafficType == entity.TrafficType);
             group?.Entities.Remove(entity);
 
@@ -179,7 +189,7 @@ namespace NetworkService.ViewModel
             }
             set
             {
-                if(_entity != value)
+                if (_entity != value)
                 {
                     _entity = value;
                     OnPropertyChanged(nameof(Entity));

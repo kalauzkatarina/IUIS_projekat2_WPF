@@ -6,7 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace NetworkService.Behaviors
 {
@@ -25,7 +27,7 @@ namespace NetworkService.Behaviors
 
         private static void OnEnableDragChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            if(d is UIElement uIElement && (bool)e.NewValue)
+            if (d is UIElement uIElement && (bool)e.NewValue)
             {
                 uIElement.PreviewMouseMove += (s, args) =>
                 {
