@@ -4,12 +4,19 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:behaviors="clr-namespace:NetworkService.Behaviors"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:helpers="clr-namespace:NetworkService.Helpers"
     xmlns:local="clr-namespace:NetworkService.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="clr-namespace:NetworkService.ViewModel"
     d:DesignHeight="700"
     d:DesignWidth="450"
     mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <!--  Inline converter za CenterX/Y u Canvas.Left/Top  -->
+        <helpers:HalfSizeConverter x:Key="HalfSizeConverter" />
+    </UserControl.Resources>
+
     <Grid Margin="10" Background="White">
 
         <Grid.RowDefinitions>
@@ -24,12 +31,12 @@
                 FontSize="20"
                 FontWeight="Bold"
                 Text="{Binding Title}" />
-            <Button
-                Width="80"
+            <ToggleButton
+                Width="100"
                 Height="25"
                 HorizontalAlignment="Right"
-                Command="{Binding ToggleConnectModeCommand}"
-                Content="Connect" />
+                Content="Connect Mode"
+                IsChecked="{Binding IsConnectMode, Mode=TwoWay}" />
         </Grid>
 
         <TreeView
@@ -54,39 +61,64 @@
             </TreeView.Resources>
         </TreeView>
 
-        <ItemsControl
-            Grid.Row="2"
-            Margin="0,10,0,0"
-            ItemsSource="{Binding CanvasSlots}">
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <UniformGrid Columns="4" Rows="3" />
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <Border
-                        Width="80"
-                        Height="100"
-                        Margin="5"
-                        behaviors:DragDropBehavior.DropCommand="{Binding DropCommand}"
-                        behaviors:DragDropBehavior.EnableDrag="True"
-                        Background="LightGray"
-                        BorderBrush="Gray"
-                        BorderThickness="1">
+        <Canvas Grid.Row="2" Background="Transparent">
+            <!--  Linije  -->
+            <ItemsControl ItemsSource="{Binding Connections}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Line
+                            Stroke="Black"
+                            StrokeThickness="2"
+                            X1="{Binding X1}"
+                            X2="{Binding X2}"
+                            Y1="{Binding Y1}"
+                            Y2="{Binding Y2}" />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
 
-                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <Image
-                                Width="60"
-                                Height="60"
-                                Source="{Binding Entity.TrafficType.TypeIconPath, FallbackValue={x:Null}}" />
+            <!--  Slotovi  -->
+            <ItemsControl ItemsSource="{Binding CanvasSlots}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <Canvas />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
 
-                            <TextBlock HorizontalAlignment="Center" Text="{Binding Entity.Id, StringFormat=ID: {0}, TargetNullValue=''}" />
-                            <TextBlock HorizontalAlignment="Center" Text="{Binding Entity.LastValue, StringFormat=Last: {0}, TargetNullValue=''}" />
-                        </StackPanel>
-                    </Border>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
+                <ItemsControl.ItemContainerStyle>
+                    <Style TargetType="ContentPresenter">
+                        <Setter Property="Canvas.Left" Value="{Binding CenterX, Converter={StaticResource HalfSizeConverter}, ConverterParameter=80}" />
+                        <Setter Property="Canvas.Top" Value="{Binding CenterY, Converter={StaticResource HalfSizeConverter}, ConverterParameter=100}" />
+                    </Style>
+                </ItemsControl.ItemContainerStyle>
+
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border
+                            Width="80"
+                            Height="100"
+                            behaviors:DragDropBehavior.DropCommand="{Binding DropCommand}"
+                            behaviors:DragDropBehavior.EnableDrag="True"
+                            Background="LightGray"
+                            BorderBrush="Gray"
+                            BorderThickness="1">
+
+                            <Border.InputBindings>
+                                <MouseBinding Command="{Binding SelectCommand}" MouseAction="LeftClick" />
+                            </Border.InputBindings>
+
+                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Image
+                                    Width="60"
+                                    Height="60"
+                                    Source="{Binding Entity.TrafficType.TypeIconPath}" />
+                                <TextBlock HorizontalAlignment="Center" Text="{Binding Entity.Id, StringFormat=ID: {0}, TargetNullValue=''}" />
+                                <TextBlock HorizontalAlignment="Center" Text="{Binding Entity.LastValue, StringFormat=Last: {0}, TargetNullValue=''}" />
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Canvas>
     </Grid>
 </UserControl>

@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\networkservice\\behaviors\\dragdropbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|solutionrelative:networkservice\\behaviors\\dragdropbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|c:\\users\\korisnik\\onedrive\\desktop\\iuis_projekat2_wpf\\projekat\\networkservice\\networkservice\\networkservice\\viewmodel\\networkdisplayviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|solutionrelative:networkservice\\viewmodel\\networkdisplayviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\networkservice\\views\\networkdisplayview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|c:\\users\\korisnik\\onedrive\\desktop\\iuis_projekat2_wpf\\projekat\\networkservice\\networkservice\\networkservice\\helpers\\halfsizeconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|solutionrelative:networkservice\\helpers\\halfsizeconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|c:\\users\\korisnik\\onedrive\\desktop\\iuis_projekat2_wpf\\projekat\\networkservice\\networkservice\\networkservice\\views\\networkdisplayview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|solutionrelative:networkservice\\views\\networkdisplayview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|c:\\users\\korisnik\\onedrive\\desktop\\iuis_projekat2_wpf\\projekat\\networkservice\\networkservice\\networkservice\\viewmodel\\networkdisplayviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|solutionrelative:networkservice\\viewmodel\\networkdisplayviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|c:\\users\\korisnik\\onedrive\\desktop\\iuis_projekat2_wpf\\projekat\\networkservice\\networkservice\\networkservice\\model\\dailytraffic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|solutionrelative:networkservice\\model\\dailytraffic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\networkservice\\behaviors\\dragdropbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AE2C93C-D3CE-4614-9394-158338AD45C1}|NetworkService\\NetworkService.csproj|solutionrelative:networkservice\\behaviors\\dragdropbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,44 +30,70 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "HalfSizeConverter.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\NetworkService\\Helpers\\HalfSizeConverter.cs",
+              "RelativeDocumentMoniker": "NetworkService\\Helpers\\HalfSizeConverter.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\NetworkService\\Helpers\\HalfSizeConverter.cs",
+              "RelativeToolTip": "NetworkService\\Helpers\\HalfSizeConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T15:51:06.667Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DailyTraffic.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\NetworkService\\Model\\DailyTraffic.cs",
+              "RelativeDocumentMoniker": "NetworkService\\Model\\DailyTraffic.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\NetworkService\\Model\\DailyTraffic.cs",
+              "RelativeToolTip": "NetworkService\\Model\\DailyTraffic.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAowE8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T15:27:52.673Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "DragDropBehavior.cs",
               "DocumentMoniker": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\NetworkService\\Behaviors\\DragDropBehavior.cs",
               "RelativeDocumentMoniker": "NetworkService\\Behaviors\\DragDropBehavior.cs",
               "ToolTip": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\NetworkService\\Behaviors\\DragDropBehavior.cs",
               "RelativeToolTip": "NetworkService\\Behaviors\\DragDropBehavior.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAwwE8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAQwFUAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-17T23:02:49.627Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "NetworkDisplayView.xaml",
               "DocumentMoniker": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\NetworkService\\Views\\NetworkDisplayView.xaml",
               "RelativeDocumentMoniker": "NetworkService\\Views\\NetworkDisplayView.xaml",
               "ToolTip": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\NetworkService\\Views\\NetworkDisplayView.xaml",
               "RelativeToolTip": "NetworkService\\Views\\NetworkDisplayView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-09-17T20:31:09.447Z",
+              "WhenOpened": "2025-09-19T13:21:02.595Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "NetworkDisplayViewModel.cs",
               "DocumentMoniker": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\NetworkService\\ViewModel\\NetworkDisplayViewModel.cs",
               "RelativeDocumentMoniker": "NetworkService\\ViewModel\\NetworkDisplayViewModel.cs",
               "ToolTip": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\IUIS_projekat2_WPF\\Projekat\\NetworkService\\NetworkService\\NetworkService\\ViewModel\\NetworkDisplayViewModel.cs",
               "RelativeToolTip": "NetworkService\\ViewModel\\NetworkDisplayViewModel.cs",
-              "ViewState": "AgIAANIAAAAAAAAAAAAAwOwAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAD4BAAAAAAAAAAAuwFEBAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T20:31:04.498Z",
+              "WhenOpened": "2025-09-19T13:20:59.572Z",
               "EditorCaption": ""
             }
           ]

@@ -237,7 +237,8 @@ namespace NetworkService.ViewModel
             Entities = new ObservableCollection<DailyTraffic>
             {
                 new DailyTraffic { Id = 1, Name = "Entitet_0", LastValue = 0, TrafficType = TrafficTypesList[0] },
-                new DailyTraffic { Id = 2, Name = "Entitet_1", LastValue = 0, TrafficType = TrafficTypesList[1] }
+                new DailyTraffic { Id = 2, Name = "Entitet_1", LastValue = 0, TrafficType = TrafficTypesList[1] },
+                new DailyTraffic { Id = 3, Name = "Entitet_2", LastValue = 0, TrafficType = TrafficTypesList[1] }
             };
 
             AllEntities = new ObservableCollection<DailyTraffic>(Entities);
