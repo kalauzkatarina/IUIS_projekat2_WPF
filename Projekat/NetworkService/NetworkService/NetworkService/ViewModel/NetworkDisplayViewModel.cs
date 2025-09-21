@@ -3,6 +3,7 @@ using NetworkService.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Diagnostics.Eventing.Reader;
 using System.Globalization;
 using System.Linq;
@@ -91,6 +92,8 @@ namespace NetworkService.ViewModel
         public NetworkDisplayViewModel(NetworkEntitiesViewModel networkEntitiesViewModel)
         {
             _networkEntitiesViewModel = networkEntitiesViewModel;
+            _networkEntitiesViewModel.EntitiesChanged += OnEntitiesChanged;
+
             var groups = _networkEntitiesViewModel.TrafficTypesList
             .Select(tt => new TrafficTypeGroupVM(tt, _networkEntitiesViewModel.Entities.Where(e => e.TrafficType == tt)));
 
@@ -103,17 +106,23 @@ namespace NetworkService.ViewModel
 
             int cols = 4;
             int rows = 3;
+            double canvasWidth = 415;
+            double canvasHeight = 400;
             int slotWidth = 80;
             int slotHeight = 100;
             int margin = 10;
+
+            double horizontalSpacing = (canvasWidth - cols * slotWidth) / (cols + 1);
+            double verticalSpacing = (canvasHeight - rows * slotHeight) / (rows + 1);
+
 
             for (int i = 0; i < rows * cols; i++)
             {
                 int col = i % cols;
                 int row = i / cols;
 
-                double centerX = col * (slotWidth + margin) + slotWidth / 2.0;
-                double centerY = row * (slotHeight + margin) + slotHeight / 2.0;
+                double centerX = horizontalSpacing + col * (slotWidth + horizontalSpacing) + slotWidth / 2.0;
+                double centerY = verticalSpacing + row * (slotHeight + verticalSpacing) + slotHeight / 2.0;
 
                 var slot = new CanvasSlot
                 {
@@ -133,6 +142,56 @@ namespace NetworkService.ViewModel
 
             ToggleConnectModeCommand = new MyICommand(() => IsConnectMode = !IsConnectMode);
         }
+
+
+        private void OnEntitiesChanged()
+        {
+            // Prvo ukloni obrisane entitete
+            foreach (var group in TrafficRoot.Children)
+            {
+                for (int i = group.Entities.Count - 1; i >= 0; i--)
+                {
+                    var entity = group.Entities[i];
+                    if (!_networkEntitiesViewModel.Entities.Contains(entity) &&
+                        !CanvasSlots.Any(s => s.Entity == entity)) // ako nije na Canvasu
+                    {
+                        group.Entities.Remove(entity);
+                    }
+                }
+            }
+
+            // Prođi kroz sve entitete i dodaj nove u odgovarajuću grupu
+            foreach (var entity in _networkEntitiesViewModel.Entities)
+            {
+                bool isOnCanvas = CanvasSlots.Any(s => s.Entity == entity);
+                if (isOnCanvas) continue;
+
+                // Provjeri da li već postoji u nekoj grupi
+                bool exists = TrafficRoot.Children
+                                .Any(g => g.Entities.Contains(entity));
+
+                if (!exists)
+                {
+                    // Nadji grupu po tipu
+                    var group = TrafficRoot.Children
+                                .FirstOrDefault(g => g.TrafficType == entity.TrafficType);
+
+                    if (group != null)
+                    {
+                        group.Entities.Add(entity); // ovo osvežava TreeView
+                    }
+                    else
+                    {
+                        // Ako nema grupe, kreiraj novu
+                        var newGroup = new TrafficTypeGroupVM(entity.TrafficType, new List<DailyTraffic> { entity });
+                        TrafficRoot.Children.Add(newGroup);
+                    }
+                }
+            }
+
+            UpdateEntitiesForSelectedType(); // opcionalno, da osveži panel ispod
+        }
+
 
         private void UpdateEntitiesForSelectedType()
         {
@@ -295,10 +354,24 @@ namespace NetworkService.ViewModel
             {
                 if (_entity != value)
                 {
+                    if (_entity != null)
+                    {
+                        // Odjavi starog entiteta
+                        _entity.PropertyChanged -= Entity_PropertyChanged;
+                    }
+
                     var oldEntity = _entity;
                     _entity = value;
+
+                    if (_entity != null)
+                    {
+                        SubscribeToEntity(_entity);
+                    }
+
                     OnPropertyChanged(nameof(Entity));
-                    EntityChanged?.Invoke(oldEntity, _entity); // obavesti sve
+                    OnPropertyChanged(nameof(BorderBrushColor));
+
+                    EntityChanged?.Invoke(oldEntity, _entity);
                 }
             }
         }
@@ -335,7 +408,37 @@ namespace NetworkService.ViewModel
             }
         }
 
-        
+        public void NotifyBorderBrushChanged()
+        {
+            OnPropertyChanged(nameof(BorderBrushColor));
+        }
+
+        public Brush BorderBrushColor
+        {
+            get
+            {
+                if (Entity == null) return Brushes.Gray;
+
+                // Ako je vrednost iznad 10000 -> crvena, inače normalna
+                return Entity.LastValue > 10000 ? Brushes.Red : Brushes.Gray;
+            }
+        }
+
+        public void SubscribeToEntity(DailyTraffic entity)
+        {
+            if (entity != null)
+            {
+                entity.PropertyChanged += Entity_PropertyChanged;
+            }
+        }
+
+        private void Entity_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(DailyTraffic.LastValue))
+            {
+                OnPropertyChanged(nameof(BorderBrushColor));
+            }
+        }
 
         public MyICommand<DailyTraffic> DropCommand { get; set; }
         public MyICommand<DailyTraffic> StartDragCommand { get; set; }

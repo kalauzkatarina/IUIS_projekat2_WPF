@@ -100,7 +100,7 @@
                             behaviors:DragDropBehavior.DropCommand="{Binding DropCommand}"
                             behaviors:DragDropBehavior.EnableDrag="True"
                             Background="LightGray"
-                            BorderBrush="Gray"
+                            BorderBrush="{Binding BorderBrushColor}"
                             BorderThickness="1">
 
                             <Border.InputBindings>

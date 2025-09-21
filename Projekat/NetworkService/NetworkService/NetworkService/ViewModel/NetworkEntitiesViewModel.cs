@@ -6,6 +6,8 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
+using System.Windows.Data;
 
 namespace NetworkService.ViewModel
 {
@@ -42,6 +44,59 @@ namespace NetworkService.ViewModel
         private bool _isLessChecked;
         private bool _isGreaterChecked;
         private bool _isEqualChecked;
+
+        private bool _isKeyboardVisible;
+        private BindingExpression _activeTextBoxBinding;
+
+        private bool _isCapsLockOn;
+
+        public bool IsKeyboardVisible
+        {
+            get
+            {
+                return _isKeyboardVisible;
+            }
+            set
+            {
+                if (_isKeyboardVisible != value)
+                {
+                    _isKeyboardVisible = value;
+                    OnPropertyChanged(nameof(IsKeyboardVisible));
+                }
+            }
+        }
+
+        public BindingExpression ActiveTextBoxBinding
+        {
+            get
+            {
+                return _activeTextBoxBinding;
+            }
+            set
+            {
+                if( _activeTextBoxBinding != value)
+                {
+                    _activeTextBoxBinding = value;
+                    OnPropertyChanged(nameof(ActiveTextBoxBinding));
+                }
+            }
+        }
+
+        public bool IsCapsLockOn
+        {
+            get
+            {
+                return _isCapsLockOn;
+            }
+            set
+            {
+                if(_isCapsLockOn != value)
+                {
+                    _isCapsLockOn = value;
+                    OnPropertyChanged(nameof(IsCapsLockOn));
+                }
+            }
+        }
 
         public DailyTraffic SelectedEntity
         {
@@ -213,7 +268,8 @@ namespace NetworkService.ViewModel
         public MyICommand ResetCommand { get; set; }
         public MyICommand SearchCommand { get; set; }
 
-
+        public MyICommand<string> KeyboardKeyCommand { get; set; }
+        public MyICommand KeyboardBackspaceCommand { get; set; }
         public NetworkEntitiesViewModel()
         {
             LoadData();
@@ -224,6 +280,9 @@ namespace NetworkService.ViewModel
             SearchCommand = new MyICommand(OnSearch);
 
             SelectedTrafficType = TrafficTypesList.First();
+
+            KeyboardKeyCommand = new MyICommand<string>(OnKeyboardKey);
+            KeyboardBackspaceCommand = new MyICommand(OnBackspace);
         }
 
         public void LoadData()
@@ -356,6 +415,47 @@ namespace NetworkService.ViewModel
         private void OnEntitiesChanged()
         {
             EntitiesChanged?.Invoke();
+        }
+
+        private void OnKeyboardKey(string key)
+        {
+            InsertCharacter(key);
+        }
+
+        private void OnBackspace()
+        {
+            Backspace();
+        }
+
+        public void InsertCharacter(string key)
+        {
+            if (ActiveTextBoxBinding?.Target is TextBox tb)
+            {
+                // Ako je CapsLock uključen i karakter je slovo, pretvori u veliko
+                if (key.Length == 1 && char.IsLetter(key[0]))
+                {
+                    key = IsCapsLockOn ? key.ToUpper() : key.ToLower();
+                }
+
+                tb.Text += key;
+                tb.CaretIndex = tb.Text.Length;
+                tb.GetBindingExpression(TextBox.TextProperty)?.UpdateSource();
+            }
+        }
+
+        private void Backspace()
+        {
+            if(ActiveTextBoxBinding?.Target is TextBox tb && tb.Text.Length > 0)
+            {
+                //ukloni poslednji karakter
+                tb.Text = tb.Text.Substring(0, tb.Text.Length - 1);
+
+                //postavi kursor na kraj
+                tb.CaretIndex = tb.Text.Length;
+
+                //obavesti binding da se promenila vrednost
+                tb.GetBindingExpression(TextBox.TextProperty)?.UpdateSource();
+            }
         }
     }
 }

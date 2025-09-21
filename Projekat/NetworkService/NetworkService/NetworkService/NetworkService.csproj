@@ -57,7 +57,9 @@
     </ApplicationDefinition>
     <Compile Include="Behaviors\DragDropBehavior.cs" />
     <Compile Include="Helpers\BindableBase.cs" />
+    <Compile Include="Helpers\BoolToVisibilityConverter.cs" />
     <Compile Include="Helpers\HalfSizeConverter.cs" />
+    <Compile Include="Helpers\TextBoxFocusBehavior.cs" />
     <Compile Include="Model\DailyTraffic.cs" />
     <Compile Include="Model\TrafficType.cs" />
     <Compile Include="Helpers\MyICommand.cs" />

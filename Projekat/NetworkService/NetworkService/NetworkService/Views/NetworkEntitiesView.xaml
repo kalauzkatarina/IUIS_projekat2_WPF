@@ -2,12 +2,18 @@
     x:Class="NetworkService.Views.NetworkEntitiesView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:conv="clr-namespace:NetworkService.Helpers"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:NetworkService.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     d:DesignHeight="700"
     d:DesignWidth="450"
     mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <conv:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+    </UserControl.Resources>
+
     <Grid Background="White">
         <TextBlock
             Margin="0,20,0,10"
@@ -19,13 +25,13 @@
         <StackPanel
             Grid.Row="1"
             Margin="0,0,0,10"
-            HorizontalAlignment="Left"
+            HorizontalAlignment="Center"
             VerticalAlignment="Top"
             Orientation="Horizontal">
 
             <ComboBox
-                Width="60"
-                Margin="10,0,10,0"
+                Width="70"
+                Margin="0,0,10,0"
                 ItemsSource="{Binding TrafficTypesList}"
                 SelectedItem="{Binding SelectedTrafficType}">
                 <ComboBox.ItemTemplate>
@@ -61,17 +67,21 @@
 
             <TextBox
                 Name="ValueTextBox"
-                Width="80"
-                Margin="5,0,10,0"
+                Width="50"
+                Margin="5,0,5,0"
+                VerticalContentAlignment="Center"
+                conv:TextBoxFocusBehavior.IsWatched="True"
                 Text="{Binding SearchValue, UpdateSourceTrigger=PropertyChanged}" />
 
             <Button
                 Width="50"
+                Margin="0,0,5,0"
                 Command="{Binding SearchCommand}"
                 Content="Search" />
 
             <Button
                 Width="50"
+                Margin="0,0,5,0"
                 Command="{Binding ResetCommand}"
                 Content="Reset" />
 
@@ -85,7 +95,7 @@
         <Border
             Grid.Row="2"
             Width="400"
-            Height="250"
+            Height="145"
             Padding="5"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
@@ -93,44 +103,47 @@
             BorderBrush="Gray"
             BorderThickness="2"
             CornerRadius="5">
-            <DataGrid
-                AutoGenerateColumns="False"
-                CanUserAddRows="False"
-                CanUserDeleteRows="False"
-                ItemsSource="{Binding Entities}"
-                ScrollViewer.HorizontalScrollBarVisibility="Auto"
-                ScrollViewer.VerticalScrollBarVisibility="Auto"
-                SelectedItem="{Binding SelectedEntity}"
-                SelectionMode="Single">
-                <DataGrid.Columns>
-                    <DataGridTextColumn
-                        Width="50"
-                        Binding="{Binding Id}"
-                        Header="ID" />
-                    <DataGridTextColumn
-                        Width="*"
-                        Binding="{Binding Name}"
-                        Header="Name" />
-                    <DataGridTemplateColumn Width="*" Header="Type">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <Image
-                                        Width="20"
-                                        Height="20"
-                                        Margin="0,0,5,0"
-                                        Source="{Binding TrafficType.TypeIconPath}" />
-                                    <TextBlock Text="{Binding TrafficType.TrafficTypes}" />
-                                </StackPanel>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-                    <DataGridTextColumn
-                        Width="*"
-                        Binding="{Binding LastValue}"
-                        Header="Last Measurement" />
-                </DataGrid.Columns>
-            </DataGrid>
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+
+                <DataGrid
+                    AutoGenerateColumns="False"
+                    CanUserAddRows="False"
+                    CanUserDeleteRows="False"
+                    ItemsSource="{Binding Entities}"
+                    ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                    ScrollViewer.VerticalScrollBarVisibility="Auto"
+                    SelectedItem="{Binding SelectedEntity}"
+                    SelectionMode="Single">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn
+                            Width="50"
+                            Binding="{Binding Id}"
+                            Header="ID" />
+                        <DataGridTextColumn
+                            Width="*"
+                            Binding="{Binding Name}"
+                            Header="Name" />
+                        <DataGridTemplateColumn Width="*" Header="Type">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image
+                                            Width="20"
+                                            Height="20"
+                                            Margin="0,0,5,0"
+                                            Source="{Binding TrafficType.TypeIconPath}" />
+                                        <TextBlock Text="{Binding TrafficType.TrafficTypes}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn
+                            Width="*"
+                            Binding="{Binding LastValue}"
+                            Header="Last Measurement" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </ScrollViewer>
         </Border>
 
         <TextBlock
@@ -143,77 +156,432 @@
 
         <StackPanel
             Grid.Row="3"
-            Margin="0,70,0,0"
+            Margin="0,60,0,0"
             HorizontalAlignment="Center"
             Orientation="Vertical">
             <StackPanel HorizontalAlignment="Center" Orientation="Vertical">
-                <Border
+                <TextBox
+                    Height="27"
+                    VerticalContentAlignment="Center"
+                    conv:TextBoxFocusBehavior.IsWatched="True"
                     Background="White"
-                    BorderBrush="#ccc"
                     BorderThickness="1"
-                    CornerRadius="8">
-                    <TextBox
-                        Height="25"
-                        Padding="5"
-                        Background="Transparent"
-                        BorderThickness="0"
-                        Text="{Binding IdText}" />
-                </Border>
-                <Border
-                    Margin="0,20,0,0"
-                    Background="White"
-                    BorderBrush="#ccc"
-                    BorderThickness="1"
-                    CornerRadius="8">
-                    <TextBox
-                        Width="170"
-                        Height="25"
-                        Padding="5"
-                        Background="Transparent"
-                        BorderThickness="0"
-                        Text="{Binding NameText}" />
-                </Border>
-                <Border
+                    Text="{Binding IdText, UpdateSourceTrigger=PropertyChanged}" />
+                <TextBox
                     Width="170"
-                    Margin="0,20,0,0"
+                    Height="27"
+                    Margin="0,15,0,0"
+                    Padding="5"
+                    VerticalContentAlignment="Center"
+                    conv:TextBoxFocusBehavior.IsWatched="True"
                     Background="White"
-                    BorderBrush="#ccc"
                     BorderThickness="1"
-                    CornerRadius="8">
-                    <ComboBox
-                        Margin="5"
-                        Background="Transparent"
-                        BorderThickness="0"
-                        ItemsSource="{Binding TrafficTypesList}"
-                        SelectedItem="{Binding SelectedTrafficType}">
-                        <ComboBox.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <Image
-                                        Width="20"
-                                        Height="20"
-                                        Margin="0,0,5,0"
-                                        Source="{Binding TypeIconPath}" />
-                                    <TextBlock Text="{Binding TrafficTypes}" />
-                                </StackPanel>
-                            </DataTemplate>
-                        </ComboBox.ItemTemplate>
-                    </ComboBox>
-                </Border>
+                    Text="{Binding NameText, UpdateSourceTrigger=PropertyChanged}" />
+
+                <ComboBox
+                    Width="170"
+                    Height="27"
+                    Margin="0,15,0,0"
+                    VerticalContentAlignment="Center"
+                    Background="White"
+                    BorderThickness="0"
+                    ItemsSource="{Binding TrafficTypesList}"
+                    SelectedItem="{Binding SelectedTrafficType}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Image
+                                    Width="20"
+                                    Height="20"
+                                    Margin="0,0,5,0"
+                                    Source="{Binding TypeIconPath}" />
+                                <TextBlock Text="{Binding TrafficTypes}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
 
                 <Button
                     Width="50"
+                    Height="27"
                     Margin="0,15,0,0"
                     Command="{Binding AddCommand}"
                     Content="Add" />
             </StackPanel>
         </StackPanel>
 
+        <Border
+            Grid.Row="4"
+            Margin="10"
+            Padding="10"
+            Background="#eee"
+            CornerRadius="10"
+            Visibility="{Binding IsKeyboardVisible, Converter={StaticResource BoolToVisibilityConverter}}">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Margin="2"
+                    Command="{Binding KeyboardKeyCommand}"
+                    CommandParameter="1"
+                    Content="1"
+                    Focusable="False" />
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Margin="2"
+                    Command="{Binding KeyboardKeyCommand}"
+                    CommandParameter="2"
+                    Content="2"
+                    Focusable="False" />
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    Margin="2"
+                    Command="{Binding KeyboardKeyCommand}"
+                    CommandParameter="3"
+                    Content="3"
+                    Focusable="False" />
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="3"
+                    Margin="2"
+                    Command="{Binding KeyboardKeyCommand}"
+                    CommandParameter="4"
+                    Content="4"
+                    Focusable="False" />
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="4"
+                    Margin="2"
+                    Command="{Binding KeyboardKeyCommand}"
+                    CommandParameter="5"
+                    Content="5"
+                    Focusable="False" />
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="5"
+                    Margin="2"
+                    Command="{Binding KeyboardKeyCommand}"
+                    CommandParameter="6"
+                    Content="6"
+                    Focusable="False" />
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="6"
+                    Margin="2"
+                    Command="{Binding KeyboardKeyCommand}"
+                    CommandParameter="7"
+                    Content="7"
+                    Focusable="False" />
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="7"
+                    Margin="2"
+                    Command="{Binding KeyboardKeyCommand}"
+                    CommandParameter="8"
+                    Content="8"
+                    Focusable="False" />
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="8"
+                    Margin="2"
+                    Command="{Binding KeyboardKeyCommand}"
+                    CommandParameter="9"
+                    Content="9"
+                    Focusable="False" />
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="9"
+                    Margin="2"
+                    Command="{Binding KeyboardKeyCommand}"
+                    CommandParameter="0"
+                    Content="0"
+                    Focusable="False" />
+
+                <Button
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Margin="2"
+                    Command="{Binding KeyboardKeyCommand}"
+                    CommandParameter="Q"
+                    Content="Q"
+                    Focusable="False" />
+                <Button
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Margin="2"
+                    Command="{Binding KeyboardKeyCommand}"
+                    CommandParameter="W"
+                    Content="W"
+                    Focusable="False" />
+                <Button
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    Margin="2"
+                    Command="{Binding KeyboardKeyCommand}"
+                    CommandParameter="E"
+                    Content="E"
+                    Focusable="False" />
+                <Button
+                    Grid.Row="1"
+                    Grid.Column="3"
+                    Margin="2"
+                    Command="{Binding KeyboardKeyCommand}"
+                    CommandParameter="R"
+                    Content="R"
+                    Focusable="False" />
+                <Button
+                    Grid.Row="1"
+                    Grid.Column="4"
+                    Margin="2"
+                    Command="{Binding KeyboardKeyCommand}"
+                    CommandParameter="T"
+                    Content="T"
+                    Focusable="False" />
+                <Button
+                    Grid.Row="1"
+                    Grid.Column="5"
+                    Margin="2"
+                    Command="{Binding KeyboardKeyCommand}"
+                    CommandParameter="Y"
+                    Content="Y"
+                    Focusable="False" />
+                <Button
+                    Grid.Row="1"
+                    Grid.Column="6"
+                    Margin="2"
+                    Command="{Binding KeyboardKeyCommand}"
+                    CommandParameter="U"
+                    Content="U"
+                    Focusable="False" />
+                <Button
+                    Grid.Row="1"
+                    Grid.Column="7"
+                    Margin="2"
+                    Command="{Binding KeyboardKeyCommand}"
+                    CommandParameter="I"
+                    Content="I"
+                    Focusable="False" />
+                <Button
+                    Grid.Row="1"
+                    Grid.Column="8"
+                    Margin="2"
+                    Command="{Binding KeyboardKeyCommand}"
+                    CommandParameter="O"
+                    Content="O"
+                    Focusable="False" />
+                <Button
+                    Grid.Row="1"
+                    Grid.Column="9"
+                    Margin="2"
+                    Command="{Binding KeyboardKeyCommand}"
+                    CommandParameter="P"
+                    Content="P"
+                    Focusable="False" />
+
+                <Button
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Margin="2"
+                    Command="{Binding KeyboardKeyCommand}"
+                    CommandParameter="A"
+                    Content="A"
+                    Focusable="False" />
+                <Button
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Margin="2"
+                    Command="{Binding KeyboardKeyCommand}"
+                    CommandParameter="S"
+                    Content="S"
+                    Focusable="False" />
+                <Button
+                    Grid.Row="2"
+                    Grid.Column="2"
+                    Margin="2"
+                    Command="{Binding KeyboardKeyCommand}"
+                    CommandParameter="D"
+                    Content="D"
+                    Focusable="False" />
+                <Button
+                    Grid.Row="2"
+                    Grid.Column="3"
+                    Margin="2"
+                    Command="{Binding KeyboardKeyCommand}"
+                    CommandParameter="F"
+                    Content="F"
+                    Focusable="False" />
+                <Button
+                    Grid.Row="2"
+                    Grid.Column="4"
+                    Margin="2"
+                    Command="{Binding KeyboardKeyCommand}"
+                    CommandParameter="G"
+                    Content="G"
+                    Focusable="False" />
+                <Button
+                    Grid.Row="2"
+                    Grid.Column="5"
+                    Margin="2"
+                    Command="{Binding KeyboardKeyCommand}"
+                    CommandParameter="H"
+                    Content="H"
+                    Focusable="False" />
+                <Button
+                    Grid.Row="2"
+                    Grid.Column="6"
+                    Margin="2"
+                    Command="{Binding KeyboardKeyCommand}"
+                    CommandParameter="J"
+                    Content="J"
+                    Focusable="False" />
+                <Button
+                    Grid.Row="2"
+                    Grid.Column="7"
+                    Margin="2"
+                    Command="{Binding KeyboardKeyCommand}"
+                    CommandParameter="K"
+                    Content="K"
+                    Focusable="False" />
+                <Button
+                    Grid.Row="2"
+                    Grid.Column="8"
+                    Margin="2"
+                    Command="{Binding KeyboardKeyCommand}"
+                    CommandParameter="L"
+                    Content="L"
+                    Focusable="False" />
+                <Button
+                    Grid.Row="2"
+                    Grid.Column="9"
+                    Margin="2"
+                    Command="{Binding KeyboardBackspaceCommand}"
+                    Content="⌫"
+                    Focusable="False" />
+
+                <Button
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Margin="2"
+                    Command="{Binding KeyboardKeyCommand}"
+                    CommandParameter="Z"
+                    Content="Z"
+                    Focusable="False" />
+                <Button
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Margin="2"
+                    Command="{Binding KeyboardKeyCommand}"
+                    CommandParameter="X"
+                    Content="X"
+                    Focusable="False" />
+                <Button
+                    Grid.Row="3"
+                    Grid.Column="2"
+                    Margin="2"
+                    Command="{Binding KeyboardKeyCommand}"
+                    CommandParameter="C"
+                    Content="C"
+                    Focusable="False" />
+                <Button
+                    Grid.Row="3"
+                    Grid.Column="3"
+                    Margin="2"
+                    Command="{Binding KeyboardKeyCommand}"
+                    CommandParameter="V"
+                    Content="V"
+                    Focusable="False" />
+                <Button
+                    Grid.Row="3"
+                    Grid.Column="4"
+                    Margin="2"
+                    Command="{Binding KeyboardKeyCommand}"
+                    CommandParameter="B"
+                    Content="B"
+                    Focusable="False" />
+                <Button
+                    Grid.Row="3"
+                    Grid.Column="5"
+                    Margin="2"
+                    Command="{Binding KeyboardKeyCommand}"
+                    CommandParameter="N"
+                    Content="N"
+                    Focusable="False" />
+                <Button
+                    Grid.Row="3"
+                    Grid.Column="6"
+                    Margin="2"
+                    Command="{Binding KeyboardKeyCommand}"
+                    CommandParameter="M"
+                    Content="M"
+                    Focusable="False" />
+                <Button
+                    Grid.Row="3"
+                    Grid.Column="7"
+                    Margin="2"
+                    Command="{Binding KeyboardKeyCommand}"
+                    CommandParameter=","
+                    Content=","
+                    Focusable="False" />
+                <Button
+                    Grid.Row="3"
+                    Grid.Column="8"
+                    Margin="2"
+                    Command="{Binding KeyboardKeyCommand}"
+                    CommandParameter="_"
+                    Content="_"
+                    Focusable="False" />
+                <ToggleButton
+                    Grid.Row="3"
+                    Grid.Column="9"
+                    Margin="2"
+                    Content="Caps"
+                    Focusable="False"
+                    IsChecked="{Binding IsCapsLockOn, Mode=TwoWay}" />
+
+                <Button
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="10"
+                    Width="250"
+                    Height="20"
+                    Margin="2,5,2,2"
+                    Command="{Binding KeyboardKeyCommand}"
+                    CommandParameter=" "
+                    Content=" "
+                    Focusable="False" />
+            </Grid>
+        </Border>
+
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="162" />
         </Grid.RowDefinitions>
     </Grid>
 </UserControl>
