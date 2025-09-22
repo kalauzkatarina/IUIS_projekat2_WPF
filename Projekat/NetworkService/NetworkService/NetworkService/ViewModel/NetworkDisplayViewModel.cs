@@ -24,6 +24,14 @@ namespace NetworkService.ViewModel
         private DailyTraffic _selectedEntity;
         private CanvasSlot _firstSelectedSlot;
 
+        private MainWindowViewModel _mainWindow;
+
+        public void SetMainWindowReference(MainWindowViewModel main)
+        {
+            _mainWindow = main;
+        }
+
+
         public string Title
         {
             get
@@ -89,9 +97,13 @@ namespace NetworkService.ViewModel
         public MyICommand<object> ReturnEntityCommand { get; set; }
         public MyICommand ToggleConnectModeCommand { get; set; }
 
+        public MyICommand NavigateToEntitiesCommand { get; set; }
+        public MyICommand NavigateToGraphCommand { get; set; }
+
         public NetworkDisplayViewModel(NetworkEntitiesViewModel networkEntitiesViewModel)
         {
             _networkEntitiesViewModel = networkEntitiesViewModel;
+
             _networkEntitiesViewModel.EntitiesChanged += OnEntitiesChanged;
 
             var groups = _networkEntitiesViewModel.TrafficTypesList
@@ -110,7 +122,6 @@ namespace NetworkService.ViewModel
             double canvasHeight = 400;
             int slotWidth = 80;
             int slotHeight = 100;
-            int margin = 10;
 
             double horizontalSpacing = (canvasWidth - cols * slotWidth) / (cols + 1);
             double verticalSpacing = (canvasHeight - rows * slotHeight) / (rows + 1);
@@ -141,6 +152,14 @@ namespace NetworkService.ViewModel
             ReturnEntityCommand = new MyICommand<object>(ReturnEntityFromCanvas);
 
             ToggleConnectModeCommand = new MyICommand(() => IsConnectMode = !IsConnectMode);
+
+            NavigateToEntitiesCommand = new MyICommand(OnEntities);
+            NavigateToGraphCommand = new MyICommand(OnGraph);
+
+            _networkEntitiesViewModel.Entities.CollectionChanged += (s, e) =>
+            {
+                RefreshEntitiesFromNetwork();
+            };
         }
 
 
@@ -192,6 +211,32 @@ namespace NetworkService.ViewModel
             UpdateEntitiesForSelectedType(); // opcionalno, da osveži panel ispod
         }
 
+        private void OnEntities()
+        {
+            if (_mainWindow != null)
+                _mainWindow.CurrentViewModel = _mainWindow.NetworkEntitiesViewModel;
+        }
+
+        private void OnGraph()
+        {
+            if (_mainWindow != null)
+                _mainWindow.CurrentViewModel = _mainWindow.MeasurementGraphViewModel;
+        }
+
+        public void RefreshEntitiesFromNetwork()
+        {
+            foreach (var group in TrafficRoot.Children)
+            {
+                group.Entities.Clear();
+                foreach (var entity in _networkEntitiesViewModel.Entities.Where(e => e.TrafficType == group.TrafficType))
+                {
+                    group.Entities.Add(entity);
+                }
+            }
+
+            // Osveži panel sa entitetima za selektovani tip
+            UpdateEntitiesForSelectedType();
+        }
 
         private void UpdateEntitiesForSelectedType()
         {

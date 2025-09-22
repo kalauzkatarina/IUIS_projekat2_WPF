@@ -55,6 +55,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Actions\AddEntityAction.cs" />
+    <Compile Include="Actions\DeleteEntityAction.cs" />
+    <Compile Include="Actions\IUndoableAction.cs" />
+    <Compile Include="Actions\NavigationAction.cs" />
     <Compile Include="Behaviors\DragDropBehavior.cs" />
     <Compile Include="Helpers\BindableBase.cs" />
     <Compile Include="Helpers\BoolToVisibilityConverter.cs" />

@@ -24,6 +24,13 @@ namespace NetworkService.ViewModel
 
         private ObservableCollection<BarInfo> _bars;
 
+        private MainWindowViewModel _mainWindow;
+
+        public void SetMainWindowReference(MainWindowViewModel main)
+        {
+            _mainWindow = main;
+        }
+
         public string Title
         {
             get
@@ -119,6 +126,9 @@ namespace NetworkService.ViewModel
 
         //public ObservableCollection<DailyTraffic> Entities => _networkEntitiesViewModel.Entities;
 
+        public MyICommand NavigateToEntitiesCommand { get; set; }
+        public MyICommand NavigateToDisplayCommand { get; set; }
+
 
         public MeasurementGraphViewModel(NetworkEntitiesViewModel networkEntitiesViewModel)
         {
@@ -139,6 +149,9 @@ namespace NetworkService.ViewModel
             Bars = new ObservableCollection<BarInfo>();
 
             Measurements.CollectionChanged += (s, e) => UpdateBars();
+
+            NavigateToEntitiesCommand = new MyICommand(OnEntities);
+            NavigateToDisplayCommand = new MyICommand(OnDisplay);
         }
 
         public void AddMeasurementRealTime(string entityName, double value)
@@ -183,6 +196,18 @@ namespace NetworkService.ViewModel
                     Label = m.Time.ToString("HH:mm:ss")
                 });
             }
+        }
+
+        private void OnEntities()
+        {
+            if (_mainWindow != null)
+                _mainWindow.CurrentViewModel = _mainWindow.NetworkEntitiesViewModel;
+        }
+
+        private void OnDisplay()
+        {
+            if (_mainWindow != null)
+                _mainWindow.CurrentViewModel = _mainWindow.NetworkDisplayViewModel;
         }
     }
 

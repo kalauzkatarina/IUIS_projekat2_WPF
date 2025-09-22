@@ -1,13 +1,18 @@
 ﻿using MVVM1;
+using NetworkService.Actions;
 using NetworkService.Model;
+using NetworkService.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO.Packaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
+using System.Windows.Media;
 
 namespace NetworkService.ViewModel
 {
@@ -16,6 +21,8 @@ namespace NetworkService.ViewModel
         private string _title = "Network Entities";
 
         public Action EntitiesChanged;
+        public Action<IUndoableAction> ActionPerformed;
+       
         public string Title
         {
             get
@@ -39,6 +46,12 @@ namespace NetworkService.ViewModel
         private int _lastValue;
         private TrafficType _trafficType;
         private TrafficType _selectedTrafficType;
+        private string _idError;
+        private string _nameError;
+        private string _searchValueError;
+        private Brush _idBorderBrush = Brushes.Gray;
+        private Brush _nameBorderBrush = Brushes.Gray;
+        private Brush _searchBorderBrush = Brushes.Gray;
 
         private string _searchValue;
         private bool _isLessChecked;
@@ -49,6 +62,13 @@ namespace NetworkService.ViewModel
         private BindingExpression _activeTextBoxBinding;
 
         private bool _isCapsLockOn;
+
+        private MainWindowViewModel _mainWindow;
+
+        public void SetMainWindowReference(MainWindowViewModel main)
+        {
+            _mainWindow = main;
+        }
 
         public bool IsKeyboardVisible
         {
@@ -126,6 +146,7 @@ namespace NetworkService.ViewModel
                 {
                     _idText = value;
                     OnPropertyChanged(nameof(IdText));
+                    ValidateId();
                 }
             }
         }
@@ -142,6 +163,7 @@ namespace NetworkService.ViewModel
                 {
                     _nameText = value;
                     OnPropertyChanged(nameof(NameText));
+                    ValidateString();
                 }
             }
         }
@@ -194,6 +216,104 @@ namespace NetworkService.ViewModel
             }
         }
 
+        public string IdError
+        {
+            get
+            {
+                return _idError;
+            }
+            set
+            {
+                if (_idError != value)
+                {
+                    _idError = value;
+                    OnPropertyChanged(nameof(IdError));
+                }
+            }
+        }
+
+        public string NameError
+        {
+            get
+            {
+                return _nameError;
+            }
+            set
+            {
+                if (_nameError != value)
+                {
+                    _nameError = value;
+                    OnPropertyChanged(nameof(NameError));
+                    ValidateString();
+                }
+            }
+        }
+
+        public string SearchValueError
+        {
+            get
+            {
+                return _searchValueError;
+            }
+            set
+            {
+                if (_searchValueError != value)
+                {
+                    _searchValueError = value;
+                    OnPropertyChanged(nameof(SearchValueError));
+                }
+            }
+        }
+
+        public Brush IdBorderBrush
+        {
+            get
+            {
+                return _idBorderBrush;
+            }
+            set
+            {
+                if(_idBorderBrush != value)
+                {
+                    _idBorderBrush = value;
+                    OnPropertyChanged(nameof(IdBorderBrush));
+                }
+            }
+        }
+
+        public Brush NameBorderBrush
+        {
+            get
+            {
+                return _nameBorderBrush;
+            }
+            set
+            {
+                if( _nameBorderBrush != value)
+                {
+                    _nameBorderBrush = value;
+                    OnPropertyChanged(nameof(NameBorderBrush));
+                }
+            }
+        }
+
+        public Brush SearchBorderBrush
+        {
+            get
+            {
+                return _searchBorderBrush;
+            }
+            set
+            {
+                if(_searchBorderBrush != value)
+                {
+                    _searchBorderBrush = value;
+                    OnPropertyChanged(nameof(SearchBorderBrush));
+                }
+            }
+        }
+
+
         public string SearchValue
         {
             get
@@ -206,6 +326,7 @@ namespace NetworkService.ViewModel
                 {
                     _searchValue = value;
                     OnPropertyChanged(nameof(SearchValue));
+                    ValidateSearchValue();
                 }
             }
         }
@@ -267,7 +388,8 @@ namespace NetworkService.ViewModel
         public MyICommand<DailyTraffic> DeleteEntityCommand { get; set; }
         public MyICommand ResetCommand { get; set; }
         public MyICommand SearchCommand { get; set; }
-
+        public MyICommand NavigateToDisplayCommand { get; set; }
+        public MyICommand NavigateToGraphCommand { get; set; }
         public MyICommand<string> KeyboardKeyCommand { get; set; }
         public MyICommand KeyboardBackspaceCommand { get; set; }
         public NetworkEntitiesViewModel()
@@ -278,6 +400,9 @@ namespace NetworkService.ViewModel
             DeleteEntityCommand = new MyICommand<DailyTraffic>(OnDeleteEntity);
             ResetCommand = new MyICommand(OnReset);    
             SearchCommand = new MyICommand(OnSearch);
+
+            NavigateToDisplayCommand = new MyICommand(OnDisplay);
+            NavigateToGraphCommand = new MyICommand(OnGraph);
 
             SelectedTrafficType = TrafficTypesList.First();
 
@@ -303,13 +428,76 @@ namespace NetworkService.ViewModel
             AllEntities = new ObservableCollection<DailyTraffic>(Entities);
         }
 
+        private void ValidateId()
+        {
+            if (string.IsNullOrWhiteSpace(IdText))
+            {
+                IdError = "Field cannot be empty.";
+                IdBorderBrush = Brushes.Red;
+            } else if(!int.TryParse(IdText, out _))
+            {
+                IdError = "Must be an integer";
+                IdBorderBrush = Brushes.Red;
+            } else
+            {
+                IdError = null;
+                IdBorderBrush = Brushes.Gray;
+            }
+        }
+
+        private void ValidateSearchValue()
+        {
+            if (string.IsNullOrWhiteSpace(SearchValue))
+            {
+                SearchValueError = "Field cannot be empty.";
+                SearchBorderBrush = Brushes.Red;
+            }
+            else if (!int.TryParse(SearchValue, out _))
+            {
+                SearchValueError = "Must be an integer";
+                SearchBorderBrush = Brushes.Red;
+            }
+            else
+            {
+                SearchValueError = null;
+                SearchBorderBrush = Brushes.Gray;
+            }
+        }
+
+        private void ValidateString()
+        {
+            if (string.IsNullOrWhiteSpace(NameText))
+            {
+                NameError = "Field cannot be empty.";
+                NameBorderBrush = Brushes.Red;
+            }
+            else if (!System.Text.RegularExpressions.Regex.IsMatch(NameText, @"^[a-zA-Z0-9_\.]+$"))
+            {
+                NameError = "Allowed characters: letters, numbers, _ and .";
+                NameBorderBrush = Brushes.Red;
+            }
+            else
+            { 
+                NameError = null;
+                NameBorderBrush = Brushes.Gray;
+            } 
+        }
+
         private void OnAdd()
         {
-            if (!int.TryParse(IdText, out int parsedId))
-                return; 
+            if (!int.TryParse(IdText, out int parsedId))          
+                return;
+
+            if (!string.IsNullOrEmpty(IdError) || !string.IsNullOrEmpty(NameError))
+            {
+                return;
+            }
 
             if (Entities.Any(e => e.Id == parsedId))
+            {
+                System.Windows.MessageBox.Show("An entity with this ID already exists.", "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
                 return;
+            }
 
             var newEntity = new DailyTraffic
             {
@@ -328,14 +516,25 @@ namespace NetworkService.ViewModel
                 SelectedTrafficType = TrafficTypesList[0];
             
             OnEntitiesChanged();
+
+            ActionPerformed?.Invoke(new AddEntityAction(Entities, newEntity));
+
+            System.Windows.MessageBox.Show("Entity added successfully!", "Success", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Information);
         }
 
         private void OnDelete()
         {
-            if (SelectedEntity != null)
-                Entities.Remove(SelectedEntity);
-
-            OnEntitiesChanged();
+            if (SelectedEntity == null) return; // Pitaj korisnika direktno
+            
+            var result = System.Windows.MessageBox.Show( "Are you sure you want to delete this entity?", "Confirm Delete", System.Windows.MessageBoxButton.YesNo, System.Windows.MessageBoxImage.Question ); 
+            
+            if (result == System.Windows.MessageBoxResult.Yes) 
+            {
+                var entityToDelete = SelectedEntity;
+                Entities.Remove(entityToDelete);
+                ActionPerformed?.Invoke(new DeleteEntityAction(Entities, entityToDelete)); OnEntitiesChanged(); 
+                System.Windows.MessageBox.Show("Entity deleted successfully!", "Deleted", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Information); 
+            }
         }
 
         private bool CanDelete()
@@ -410,6 +609,18 @@ namespace NetworkService.ViewModel
             {
                 Entities.Add(e);
             }
+        }
+
+        private void OnDisplay()
+        {
+            if (_mainWindow != null)
+                _mainWindow.CurrentViewModel = _mainWindow.NetworkDisplayViewModel;
+        }
+
+        private void OnGraph()
+        {
+            if (_mainWindow != null)
+                _mainWindow.CurrentViewModel = _mainWindow.MeasurementGraphViewModel;
         }
 
         private void OnEntitiesChanged()

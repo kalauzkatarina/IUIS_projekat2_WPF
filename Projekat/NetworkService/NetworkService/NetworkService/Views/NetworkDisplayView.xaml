@@ -26,17 +26,25 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0" Margin="0,15,0,0">
+            <Button
+                Width="50"
+                Height="25"
+                Margin="0,0,5,5"
+                HorizontalAlignment="Left"
+                Command="{Binding NavigateToEntitiesCommand}"
+                Content="Entities" />
+            <Button
+                Width="50"
+                Height="25"
+                Margin="5,0,0,5"
+                HorizontalAlignment="Right"
+                Command="{Binding NavigateToGraphCommand}"
+                Content="Graph" />
             <TextBlock
                 HorizontalAlignment="Center"
                 FontSize="20"
                 FontWeight="Bold"
                 Text="{Binding Title}" />
-            <ToggleButton
-                Width="100"
-                Height="25"
-                HorizontalAlignment="Right"
-                Content="Connect Mode"
-                IsChecked="{Binding IsConnectMode, Mode=TwoWay}" />
         </Grid>
 
         <TreeView
@@ -60,6 +68,15 @@
                 </HierarchicalDataTemplate>
             </TreeView.Resources>
         </TreeView>
+
+        <ToggleButton
+            Grid.Row="1"
+            Width="100"
+            Height="25"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            Content="Connect Mode"
+            IsChecked="{Binding IsConnectMode, Mode=TwoWay}" />
 
         <Canvas Grid.Row="2" Background="Transparent">
             <!--  Linije  -->

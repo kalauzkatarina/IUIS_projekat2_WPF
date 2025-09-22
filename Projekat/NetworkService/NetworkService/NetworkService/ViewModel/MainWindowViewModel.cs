@@ -1,4 +1,5 @@
 ﻿using MVVM1;
+using NetworkService.Actions;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,6 +18,7 @@ namespace NetworkService.ViewModel
                                 // ######### ZAMENITI stvarnim brojem elemenata
                                 //           zavisno od broja entiteta u listi
 
+        private Stack<IUndoableAction> _undoStack = new Stack<IUndoableAction>();
 
         public HomeViewModel HomeViewModel { get; set; }
         public NetworkEntitiesViewModel NetworkEntitiesViewModel { get; set; }
@@ -34,6 +36,12 @@ namespace NetworkService.ViewModel
             }
             set
             {
+                if (_currentViewModel != null && value != _currentViewModel)
+                {
+                    // Dodaj navigaciju u undo stack
+                    _undoStack.Push(new NavigationAction(this, _currentViewModel));
+                }
+
                 SetProperty(ref _currentViewModel, value);
 
             }
@@ -44,24 +52,35 @@ namespace NetworkService.ViewModel
             createListener(); //Povezivanje sa serverskom aplikacijom
             HomeViewModel = new HomeViewModel();
             NetworkEntitiesViewModel = new NetworkEntitiesViewModel();
-            NetworkDisplayViewModel = new NetworkDisplayViewModel(NetworkEntitiesViewModel);
             MeasurementGraphViewModel = new MeasurementGraphViewModel(NetworkEntitiesViewModel);
+            NetworkDisplayViewModel = new NetworkDisplayViewModel(NetworkEntitiesViewModel);
             HomeViewModel.SetMainWindowReference(this);
+            NetworkEntitiesViewModel.SetMainWindowReference(this);
+            NetworkDisplayViewModel.SetMainWindowReference(this);
+            MeasurementGraphViewModel.SetMainWindowReference(this);
             CurrentViewModel = HomeViewModel;
 
             UndoCommand = new MyICommand(OnUndo);
             HomeCommand = new MyICommand(OnHome);
 
-            //DODATO
             NetworkEntitiesViewModel.EntitiesChanged += () =>
             {
                 NotifySimulatorToUpdateCount();
+            };
+
+            NetworkEntitiesViewModel.ActionPerformed += (action) =>
+            {
+                _undoStack.Push(action);
             };
         }
 
         private void OnUndo()
         {
-
+            if(_undoStack.Count > 0)
+            {
+                var action = _undoStack.Pop();
+                action.Undo();
+            }
         }
 
         private void OnHome()
