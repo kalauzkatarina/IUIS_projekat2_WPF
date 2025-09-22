@@ -142,25 +142,33 @@ namespace NetworkService.ViewModel
         {
             try
             {
+                // Poruka je u formatu "Entitet_<index>:<value>"
                 string[] parts = message.Split(':');
                 if (parts.Length != 2) return;
 
-                string entityName = parts[0];
+                string entityPart = parts[0]; // "Entitet_1"
                 if (!int.TryParse(parts[1], out int newValue)) return;
 
-                var entity = NetworkEntitiesViewModel.Entities.FirstOrDefault(e => e.Name.Replace(" ", "_") == entityName);
+                // Izvuci indeks iz "Entitet_<index>"
+                if (!entityPart.StartsWith("Entitet_")) return;
+                string indexStr = entityPart.Substring("Entitet_".Length);
+                if (!int.TryParse(indexStr, out int entityIndex)) return;
 
-                if(entity != null)
+                // Proveri da li indeks postoji u listi
+                if (NetworkEntitiesViewModel.Entities == null || entityIndex < 0 || entityIndex >= NetworkEntitiesViewModel.Entities.Count)
+                    return;
+
+                var entity = NetworkEntitiesViewModel.Entities[entityIndex];
+
+                App.Current.Dispatcher.Invoke(() =>
                 {
-                    App.Current.Dispatcher.Invoke(() =>
-                    {
-                        entity.LastValue = newValue;
-                        MeasurementGraphViewModel.AddMeasurementRealTime(entity.Name.Replace(" ", "_"), newValue);
-                    });
-                }
+                    entity.LastValue = newValue;
+                    MeasurementGraphViewModel.AddMeasurementRealTime("Entitet_" + entityIndex, newValue);
+                });
 
-                LogMeasurement(entityName, newValue);
-            } catch (Exception ex)
+                LogMeasurement("Entitet_" + entityIndex, newValue);
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine("Error while processing the message: " + ex.Message);
             }
