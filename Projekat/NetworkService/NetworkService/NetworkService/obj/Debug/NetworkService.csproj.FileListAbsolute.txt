@@ -63,3 +63,4 @@ C:\Users\Korisnik\OneDrive\Desktop\IUIS_projekat2_WPF\Projekat\NetworkService\Ne
 C:\Users\Korisnik\OneDrive\Desktop\IUIS_projekat2_WPF\Projekat\NetworkService\NetworkService\NetworkService\obj\Debug\NetworkService.csproj.CoreCompileInputs.cache
 C:\Users\Korisnik\OneDrive\Desktop\IUIS_projekat2_WPF\Projekat\NetworkService\NetworkService\NetworkService\obj\Debug\NetworkService.exe
 C:\Users\Korisnik\OneDrive\Desktop\IUIS_projekat2_WPF\Projekat\NetworkService\NetworkService\NetworkService\obj\Debug\NetworkService.pdb
+C:\Users\Korisnik\OneDrive\Desktop\IUIS_projekat2_WPF\Projekat\NetworkService\NetworkService\NetworkService\obj\Debug\App.baml

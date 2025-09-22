@@ -7,13 +7,15 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     d:DesignHeight="700"
     d:DesignWidth="450"
+    Background="{StaticResource UIPrimaryColor}"
     mc:Ignorable="d">
     <Grid>
         <TextBlock
             Margin="0,20,0,10"
             HorizontalAlignment="Center"
-            FontSize="20"
+            FontSize="25"
             FontWeight="Bold"
+            Foreground="{StaticResource ButtonColor}"
             Text="{Binding Title}" />
 
         <StackPanel

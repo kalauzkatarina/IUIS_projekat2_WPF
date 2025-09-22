@@ -10,6 +10,7 @@
     xmlns:vm="clr-namespace:NetworkService.ViewModel"
     d:DesignHeight="700"
     d:DesignWidth="450"
+    Background="{StaticResource UIPrimaryColor}"
     mc:Ignorable="d">
 
     <UserControl.Resources>
@@ -17,7 +18,7 @@
         <helpers:HalfSizeConverter x:Key="HalfSizeConverter" />
     </UserControl.Resources>
 
-    <Grid Margin="10" Background="White">
+    <Grid Margin="10">
 
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
@@ -42,24 +43,27 @@
                 Content="Graph" />
             <TextBlock
                 HorizontalAlignment="Center"
-                FontSize="20"
+                FontSize="25"
                 FontWeight="Bold"
+                Foreground="{StaticResource ButtonColor}"
                 Text="{Binding Title}" />
         </Grid>
 
         <TreeView
             Grid.Row="1"
             behaviors:DragDropBehavior.DropCommand="{Binding ReturnEntityCommand}"
+            Background="{StaticResource UISecondaryColor}"
             ItemsSource="{Binding TrafficRoot.Children}">
             <TreeView.Resources>
-                <!--  Root čvor  -->
                 <HierarchicalDataTemplate DataType="{x:Type vm:TrafficRootVM}" ItemsSource="{Binding Children}">
                     <TextBlock FontWeight="Bold" Text="{Binding Name}" />
                 </HierarchicalDataTemplate>
 
-                <!--  Tipovi  -->
                 <HierarchicalDataTemplate DataType="{x:Type vm:TrafficTypeGroupVM}" ItemsSource="{Binding Entities}">
-                    <TextBlock FontWeight="Bold" Text="{Binding TrafficType.TrafficTypes}" />
+                    <TextBlock
+                        FontSize="13"
+                        FontWeight="Bold"
+                        Text="{Binding TrafficType.TrafficTypes}" />
                     <HierarchicalDataTemplate.ItemTemplate>
                         <DataTemplate>
                             <TextBlock behaviors:DragDropBehavior.EnableDrag="True" Text="{Binding Name}" />
@@ -116,7 +120,7 @@
                             Height="100"
                             behaviors:DragDropBehavior.DropCommand="{Binding DropCommand}"
                             behaviors:DragDropBehavior.EnableDrag="True"
-                            Background="LightGray"
+                            Background="{StaticResource UISecondaryColor}"
                             BorderBrush="{Binding BorderBrushColor}"
                             BorderThickness="1">
 

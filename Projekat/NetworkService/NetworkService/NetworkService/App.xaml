@@ -1,9 +1,46 @@
-﻿<Application x:Class="NetworkService.App"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:NetworkService"
-             StartupUri="MainWindow.xaml">
+﻿<Application
+    x:Class="NetworkService.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:NetworkService"
+    StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <SolidColorBrush x:Key="UIPrimaryColor" Color="#708993" />
+        <SolidColorBrush x:Key="UISecondaryColor" Color="#A1C2BD" />
+        <SolidColorBrush x:Key="UIThirdColor" Color="#E7F2EF" />
+        <SolidColorBrush x:Key="ButtonColor" Color="#19183B" />
+        <SolidColorBrush x:Key="ButtonTextColor" Color="White" />
+
+        <Style TargetType="{x:Type Window}">
+            <Setter Property="Background" Value="{StaticResource UIPrimaryColor}" />
+        </Style>
+
+        <Style TargetType="{x:Type UserControl}">
+            <Setter Property="Background" Value="{StaticResource UIPrimaryColor}" />
+        </Style>
+
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="{StaticResource ButtonColor}" />
+            <Setter Property="Foreground" Value="{StaticResource ButtonTextColor}" />
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+
+        <Style TargetType="{x:Type ToggleButton}">
+            <Setter Property="Background" Value="{StaticResource ButtonColor}" />
+            <Setter Property="Foreground" Value="{StaticResource ButtonTextColor}" />
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="{StaticResource UIThirdColor}" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="Padding" Value="4" />
+        </Style>
+
+        <Style TargetType="{x:Type ComboBox}">
+            <Setter Property="Background" Value="{StaticResource UIThirdColor}" />
+            <Setter Property="Foreground" Value="Black" />
+        </Style>
+
     </Application.Resources>
 </Application>

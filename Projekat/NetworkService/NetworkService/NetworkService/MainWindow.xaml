@@ -31,7 +31,7 @@
         </DataTemplate>
     </Window.Resources>
 
-    <Grid>
+    <Grid Background="{StaticResource UIPrimaryColor}">
         <ContentControl
             Grid.Row="0"
             Grid.ColumnSpan="20"

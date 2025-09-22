@@ -429,7 +429,7 @@ namespace NetworkService.ViewModel
             }
             set
             {
-                if( _centerX != value)
+                if (_centerX != value)
                 {
                     _centerX = value;
                     OnPropertyChanged(nameof(CenterX));
@@ -445,7 +445,7 @@ namespace NetworkService.ViewModel
             }
             set
             {
-                if(_centerY != value)
+                if (_centerY != value)
                 {
                     _centerY = value;
                     OnPropertyChanged(nameof(CenterY));
