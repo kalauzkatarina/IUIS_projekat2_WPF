@@ -10,6 +10,14 @@ The project was created according to the assigned combination:
 **CG3 (Mobile Users) – T3 (Daily Traffic) – G2 (Bar Graph) – P2 (Combined Filtering).**
 
 ---
+## Figma 
+
+The user interface and layout of the application were partially designed in Figma.  
+The design includes page structure, component layout and interaction flow.
+
+https://www.figma.com/design/mooW3jr4ZT8d2EWAx9sAZ2/Infrastructure-Simulator-IUIS?node-id=1140-6414&t=6p0ksbou0RzFxVQA-1
+
+---
 
 ## Target User Group: CG3 — Mobile Phone Users
 
