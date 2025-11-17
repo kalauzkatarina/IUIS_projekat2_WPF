@@ -532,7 +532,8 @@ namespace NetworkService.ViewModel
             {
                 var entityToDelete = SelectedEntity;
                 Entities.Remove(entityToDelete);
-                ActionPerformed?.Invoke(new DeleteEntityAction(Entities, entityToDelete)); OnEntitiesChanged(); 
+                ActionPerformed?.Invoke(new DeleteEntityAction(Entities, entityToDelete)); 
+                OnEntitiesChanged(); 
                 System.Windows.MessageBox.Show("Entity deleted successfully!", "Deleted", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Information); 
             }
         }
